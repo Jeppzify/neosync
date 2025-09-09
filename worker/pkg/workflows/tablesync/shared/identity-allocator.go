@@ -7,7 +7,7 @@ import (
 	"hash/fnv"
 	"sync"
 
-	"github.com/nucleuscloud/neosync/worker/pkg/rng"
+	"github.com/Jeppzify/neosync/worker/pkg/rng"
 	temporalclient "go.temporal.io/sdk/client"
 )
 

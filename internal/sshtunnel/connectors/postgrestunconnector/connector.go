@@ -10,8 +10,8 @@ import (
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/stdlib"
 	"github.com/jackc/pgx/v5/tracelog"
-	pgxslog "github.com/nucleuscloud/neosync/internal/pgx-slog"
-	"github.com/nucleuscloud/neosync/internal/sshtunnel"
+	pgxslog "github.com/Jeppzify/neosync/internal/pgx-slog"
+	"github.com/Jeppzify/neosync/internal/sshtunnel"
 )
 
 type Connector struct {

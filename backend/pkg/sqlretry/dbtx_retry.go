@@ -15,8 +15,8 @@ import (
 	"github.com/go-sql-driver/mysql"
 	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/lib/pq"
-	"github.com/nucleuscloud/neosync/backend/pkg/sqldbtx"
-	"github.com/nucleuscloud/neosync/internal/backoffutil"
+	"github.com/Jeppzify/neosync/backend/pkg/sqldbtx"
+	"github.com/Jeppzify/neosync/internal/backoffutil"
 )
 
 type RetryDBTX struct {

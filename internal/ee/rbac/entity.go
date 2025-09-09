@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/jackc/pgx/v5/pgtype"
-	"github.com/nucleuscloud/neosync/internal/neosyncdb"
+	"github.com/Jeppzify/neosync/internal/neosyncdb"
 )
 
 const (

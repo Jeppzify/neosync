@@ -1,8 +1,8 @@
 package selectquerybuilder
 
 import (
-	sqlmanager_shared "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/shared"
-	rc "github.com/nucleuscloud/neosync/internal/runconfigs"
+	sqlmanager_shared "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/shared"
+	rc "github.com/Jeppzify/neosync/internal/runconfigs"
 )
 
 // QueryMapBuilderWrapper implements the SelectQueryMapBuilder interface

@@ -7,9 +7,9 @@ import (
 
 	_ "github.com/doug-martin/goqu/v9/dialect/mysql"
 	_ "github.com/doug-martin/goqu/v9/dialect/postgres"
-	"github.com/nucleuscloud/neosync/backend/pkg/sqldbtx"
-	neosync_benthos "github.com/nucleuscloud/neosync/worker/pkg/benthos"
-	querybuilder "github.com/nucleuscloud/neosync/worker/pkg/query-builder"
+	"github.com/Jeppzify/neosync/backend/pkg/sqldbtx"
+	neosync_benthos "github.com/Jeppzify/neosync/worker/pkg/benthos"
+	querybuilder "github.com/Jeppzify/neosync/worker/pkg/query-builder"
 	"github.com/redpanda-data/benthos/v4/public/service"
 )
 

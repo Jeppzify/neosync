@@ -3,13 +3,13 @@ info:
   summary: Neosync API
   description: Neosync API
   version: 0.5
-  termsOfService: "https://www.neosync.dev/terms-of-service"
+  termsOfService: "https://example.com/terms-of-service"
   contact:
     name: Neosync Support
     email: support@neosync.dev
   license:
     name: MIT
-    url: https://github.com/nucleuscloud/neosync/blob/main/LICENSE.md
+    url: https://github.com/Jeppzify/neosync/blob/main/LICENSE.md
 externalDocs:
   description: API and SDK Documentation
   url: https://docs.neosync.dev/api

@@ -5,11 +5,11 @@ import (
 	"fmt"
 
 	"connectrpc.com/connect"
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	auth_apikey "github.com/nucleuscloud/neosync/backend/internal/auth/apikey"
-	"github.com/nucleuscloud/neosync/internal/ee/license"
-	"github.com/nucleuscloud/neosync/internal/ee/rbac"
-	"github.com/nucleuscloud/neosync/internal/neosyncdb"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	auth_apikey "github.com/Jeppzify/neosync/backend/internal/auth/apikey"
+	"github.com/Jeppzify/neosync/internal/ee/license"
+	"github.com/Jeppzify/neosync/internal/ee/rbac"
+	"github.com/Jeppzify/neosync/internal/neosyncdb"
 )
 
 type UserServiceClient interface {

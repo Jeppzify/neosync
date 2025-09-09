@@ -8,7 +8,7 @@ import (
 	"context"
 
 	"github.com/jackc/pgx/v5/pgtype"
-	pg_models "github.com/nucleuscloud/neosync/backend/sql/postgresql/models"
+	pg_models "github.com/Jeppzify/neosync/backend/sql/postgresql/models"
 )
 
 type Querier interface {

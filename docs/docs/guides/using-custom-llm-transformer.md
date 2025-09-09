@@ -14,7 +14,7 @@ This guide walks through how you can integrate Neosync with any LLM or machine l
 
 In order to get started, you'll need the following:
 
-1. A Neosync account which you can sign up for free [here](https://www.neosync.dev)
+1. A Neosync account which you can sign up for free [here](https://example.com)
 2. Access to an LLM hosted at an endpoint. I'll be using OpenAI but you can use any other LLM as long as it's available at a REST endpoint.
 3. A database to store your data. I'm going to use Neon but either Postgres or Mysql works.
 
@@ -62,7 +62,7 @@ Nice! Looks like we can see our database and table and that our permissions are 
 
 ## Creating a Custom Transformer
 
-Neosync has the notion of Transformers. Transformers are modules that can generate synthetic data or anonymize existing data. We ship Neosync with 40+ transformers out of the box but you can also create your own [custom transformers](https://www.neosync.dev/blog/introducing-custom-transformers) in code which is what we're going to do for this use case.
+Neosync has the notion of Transformers. Transformers are modules that can generate synthetic data or anonymize existing data. We ship Neosync with 40+ transformers out of the box but you can also create your own [custom transformers](https://example.com/blog/introducing-custom-transformers) in code which is what we're going to do for this use case.
 
 Click on **Transformers** in the top navigation menu and then the **+ New Transformer** button.
 

@@ -1,13 +1,13 @@
 package v1alpha1_jobservice
 
 import (
-	"github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
-	jobhooks "github.com/nucleuscloud/neosync/backend/internal/ee/hooks/jobs"
-	"github.com/nucleuscloud/neosync/backend/internal/userdata"
-	sql_manager "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager"
-	"github.com/nucleuscloud/neosync/internal/connectiondata"
-	"github.com/nucleuscloud/neosync/internal/neosyncdb"
-	clientmanager "github.com/nucleuscloud/neosync/internal/temporal/clientmanager"
+	"github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
+	jobhooks "github.com/Jeppzify/neosync/backend/internal/ee/hooks/jobs"
+	"github.com/Jeppzify/neosync/backend/internal/userdata"
+	sql_manager "github.com/Jeppzify/neosync/backend/pkg/sqlmanager"
+	"github.com/Jeppzify/neosync/internal/connectiondata"
+	"github.com/Jeppzify/neosync/internal/neosyncdb"
+	clientmanager "github.com/Jeppzify/neosync/internal/temporal/clientmanager"
 )
 
 type Service struct {

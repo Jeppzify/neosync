@@ -2,13 +2,13 @@ openapi: 3.1.0
 info:
   summary: Neosync API
   version: '0.5'
-  termsOfService: https://www.neosync.dev/terms-of-service
+  termsOfService: https://example.com/terms-of-service
   contact:
     name: Neosync Support
     email: support@neosync.dev
   license:
     name: MIT
-    url: https://github.com/nucleuscloud/neosync/blob/main/LICENSE.md
+    url: https://github.com/Jeppzify/neosync/blob/main/LICENSE.md
   title: mgmt.v1alpha1
 servers:
   - url: https://neosync-api.svcs.neosync.dev

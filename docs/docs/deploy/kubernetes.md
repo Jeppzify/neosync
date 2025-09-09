@@ -28,34 +28,34 @@ If using the Neosync AIO chart at version `v1.0.0`, it will use `v1.0.0` of the 
 ### API
 
 The API Helm chart can be used to deploy just the backend API server.
-The chart itself can be found [here](https://github.com/nucleuscloud/neosync/tree/main/backend/charts/api).
+The chart itself can be found [here](https://github.com/Jeppzify/neosync/tree/main/backend/charts/api).
 
-The local dev edition can be found in the [helmfile](https://github.com/nucleuscloud/neosync/blob/main/backend/dev/helm/api/helmfile.yaml) that is used by our dev Tilt instance.
+The local dev edition can be found in the [helmfile](https://github.com/Jeppzify/neosync/blob/main/backend/dev/helm/api/helmfile.yaml) that is used by our dev Tilt instance.
 
 The full image can be docker pulled via: `docker pull ghcr.io/nucleuscloud/neosync/helm/api:latest`
 
 ### App
 
 The APP Helm chart can be used to deploy just the frontend APP.
-The chart itself can be found [here](https://github.com/nucleuscloud/neosync/tree/main/frontend/charts/app).
+The chart itself can be found [here](https://github.com/Jeppzify/neosync/tree/main/frontend/charts/app).
 
-The local dev edition can be found in the [helmfile](https://github.com/nucleuscloud/neosync/blob/main/frontend/apps/web/dev/helm/app/helmfile.yaml) that is used by our dev Tilt instance.
+The local dev edition can be found in the [helmfile](https://github.com/Jeppzify/neosync/blob/main/frontend/apps/web/dev/helm/app/helmfile.yaml) that is used by our dev Tilt instance.
 
 The full image can be docker pulled via: `docker pull ghcr.io/nucleuscloud/neosync/helm/app:latest`
 
 ### Worker
 
 The APP Helm chart can be used to deploy just the worker.
-The chart itself can be found [here](https://github.com/nucleuscloud/neosync/tree/main/worker/charts/worker).
+The chart itself can be found [here](https://github.com/Jeppzify/neosync/tree/main/worker/charts/worker).
 
-The local dev edition can be found in the [helmfile](https://github.com/nucleuscloud/neosync/blob/main/worker/dev/helm/helmfile.yaml) that is used by our dev Tilt instance.
+The local dev edition can be found in the [helmfile](https://github.com/Jeppzify/neosync/blob/main/worker/dev/helm/helmfile.yaml) that is used by our dev Tilt instance.
 
 The full image can be docker pulled via: `docker pull ghcr.io/nucleuscloud/neosync/helm/worker:latest`
 
 ### Neosync Umbrella Chart
 
 The Neosync Umbrella Helm chart can be used to deploy all three resources listed above.
-The chart itself can be found [here](https://github.com/nucleuscloud/neosync/blob/main/charts/neosync).
+The chart itself can be found [here](https://github.com/Jeppzify/neosync/blob/main/charts/neosync).
 
 This chart has no templates of its own and merely acts as a single helm entrypoint to deploy all of the Neosync services.
 It only contains a `Chart.yaml` that defines the three Neosync dependencies.

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	accounthook_events "github.com/nucleuscloud/neosync/internal/ee/events"
-	execute_hook_activity "github.com/nucleuscloud/neosync/worker/pkg/workflows/ee/account_hooks/activities/execute"
-	hooks_by_event_activity "github.com/nucleuscloud/neosync/worker/pkg/workflows/ee/account_hooks/activities/hooks-by-event"
+	accounthook_events "github.com/Jeppzify/neosync/internal/ee/events"
+	execute_hook_activity "github.com/Jeppzify/neosync/worker/pkg/workflows/ee/account_hooks/activities/execute"
+	hooks_by_event_activity "github.com/Jeppzify/neosync/worker/pkg/workflows/ee/account_hooks/activities/hooks-by-event"
 	"go.temporal.io/sdk/temporal"
 	"go.temporal.io/sdk/workflow"
 )

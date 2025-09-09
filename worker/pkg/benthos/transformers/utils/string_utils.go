@@ -8,7 +8,7 @@ import (
 	"unicode"
 	"unsafe"
 
-	"github.com/nucleuscloud/neosync/worker/pkg/rng"
+	"github.com/Jeppzify/neosync/worker/pkg/rng"
 )
 
 var SpecialCharsSet = map[rune]struct{}{

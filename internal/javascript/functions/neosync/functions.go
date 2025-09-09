@@ -8,8 +8,8 @@ import (
 	"strings"
 
 	"github.com/dop251/goja"
-	javascript_functions "github.com/nucleuscloud/neosync/internal/javascript/functions"
-	"github.com/nucleuscloud/neosync/worker/pkg/benthos/transformers"
+	javascript_functions "github.com/Jeppzify/neosync/internal/javascript/functions"
+	"github.com/Jeppzify/neosync/worker/pkg/benthos/transformers"
 )
 
 const (

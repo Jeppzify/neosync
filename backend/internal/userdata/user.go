@@ -6,12 +6,12 @@ import (
 
 	"connectrpc.com/connect"
 	"github.com/jackc/pgx/v5/pgtype"
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	auth_apikey "github.com/nucleuscloud/neosync/backend/internal/auth/apikey"
-	"github.com/nucleuscloud/neosync/internal/apikey"
-	"github.com/nucleuscloud/neosync/internal/ee/license"
-	nucleuserrors "github.com/nucleuscloud/neosync/internal/errors"
-	"github.com/nucleuscloud/neosync/internal/neosyncdb"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	auth_apikey "github.com/Jeppzify/neosync/backend/internal/auth/apikey"
+	"github.com/Jeppzify/neosync/internal/apikey"
+	"github.com/Jeppzify/neosync/internal/ee/license"
+	nucleuserrors "github.com/Jeppzify/neosync/internal/errors"
+	"github.com/Jeppzify/neosync/internal/neosyncdb"
 )
 
 type UserAccountServiceClient interface {

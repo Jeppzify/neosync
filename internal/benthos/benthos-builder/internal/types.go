@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"log/slog"
 
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	"github.com/nucleuscloud/neosync/backend/pkg/metrics"
-	sqlmanager_shared "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/shared"
-	bb_shared "github.com/nucleuscloud/neosync/internal/benthos/benthos-builder/shared"
-	"github.com/nucleuscloud/neosync/internal/runconfigs"
-	neosync_benthos "github.com/nucleuscloud/neosync/worker/pkg/benthos"
-	tablesync_shared "github.com/nucleuscloud/neosync/worker/pkg/workflows/tablesync/shared"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	"github.com/Jeppzify/neosync/backend/pkg/metrics"
+	sqlmanager_shared "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/shared"
+	bb_shared "github.com/Jeppzify/neosync/internal/benthos/benthos-builder/shared"
+	"github.com/Jeppzify/neosync/internal/runconfigs"
+	neosync_benthos "github.com/Jeppzify/neosync/worker/pkg/benthos"
+	tablesync_shared "github.com/Jeppzify/neosync/worker/pkg/workflows/tablesync/shared"
 )
 
 // Determines SQL driver from connection type

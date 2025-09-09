@@ -18,10 +18,10 @@ Open Source Data Anonymization and Synthetic Data Orchestration
 <p>
 
 <div align='center'>
- | <a href="https://www.neosync.dev">Website</a>
+ | <a href="https://example.com">Website</a>
  | <a href="https://docs.neosync.dev">Docs</a>
  | <a href="https://discord.com/invite/MFAMgnp4HF">Discord</a>
- | <a href="https://www.neosync.dev/blog">Blog</a>
+ | <a href="https://example.com/blog">Blog</a>
  | <a href="https://docs.neosync.dev/changelog">Changelog</a>
  | <a href="https://neosync.productlane.com/roadmap">Roadmap</a>
 </div>
@@ -36,8 +36,8 @@ Open Source Data Anonymization and Synthetic Data Orchestration
   <!-- <a href="https://codecov.io/gh/nucleuscloud/neosync">
     <img alt="CodeCov" src="https://codecov.io/gh/nucleuscloud/neosync/graph/badge.svg?token=A35QDLRU04"/>
     </a> -->
-  <a href="https://github.com/nucleuscloud/neosync/actions/workflows/go.yml/">
-    <img alt="Go Tests" src="https://github.com/nucleuscloud/neosync/actions/workflows/go.yml/badge.svg"/>
+  <a href="https://github.com/Jeppzify/neosync/actions/workflows/go.yml/">
+    <img alt="Go Tests" src="https://github.com/Jeppzify/neosync/actions/workflows/go.yml/badge.svg"/>
   </a>
   <a href="https://x.com/neosynccloud">
     <img alt="Follow X" src="https://img.shields.io/twitter/follow/neosynccloud?label=Follow"/>
@@ -54,7 +54,7 @@ Open Source Data Anonymization and Synthetic Data Orchestration
 
 ## Introduction
 
-[Neosync](https://www.neosync.dev) is an open-source, developer-first way to anonymize PII, generate synthetic data and sync environments for better testing, debugging and developer experience.
+[Neosync](https://example.com) is an open-source, developer-first way to anonymize PII, generate synthetic data and sync environments for better testing, debugging and developer experience.
 
 Companies use Neosync to:
 
@@ -118,7 +118,7 @@ We love contributions big and small. Here are just a few ways that you can contr
 
 - Join our [Discord](https://discord.com/invite/MFAMgnp4HF) channel and ask us any questions there
 - Open a PR (see our instructions on [developing with Neosync locally](https://docs.neosync.dev/guides/neosync-local-dev))
-- Submit a [feature request](https://github.com/nucleuscloud/neosync/issues/new?assignees=&labels=enhancement%2C+feature&template=feature_request.md) or [bug report](https://github.com/nucleuscloud/neosync/issues/new?assignees=&labels=bug&template=bug_report.md)
+- Submit a [feature request](https://github.com/Jeppzify/neosync/issues/new?assignees=&labels=enhancement%2C+feature&template=feature_request.md) or [bug report](https://github.com/Jeppzify/neosync/issues/new?assignees=&labels=bug&template=bug_report.md)
 
 ## Licensing
 

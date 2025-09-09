@@ -3,7 +3,7 @@ package v1alpha1_authservice
 import (
 	"context"
 
-	auth_client "github.com/nucleuscloud/neosync/backend/internal/auth/client"
+	auth_client "github.com/Jeppzify/neosync/backend/internal/auth/client"
 )
 
 type Service struct {

@@ -7,8 +7,8 @@ import (
 	"net/url"
 	"strings"
 
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	dbconnectconfig "github.com/nucleuscloud/neosync/backend/pkg/dbconnect-config"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	dbconnectconfig "github.com/Jeppzify/neosync/backend/pkg/dbconnect-config"
 )
 
 type ConnectionConfig struct {

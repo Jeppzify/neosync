@@ -6,7 +6,7 @@ With regard to the Neosync Software:
 This software and associated documentation files (the "Software") may only be
 used in production, if you (and any entity that you represent) have agreed to,
 and are in compliance with, the Neosync Cloud Terms of Service, available
-at https://www.neosync.dev/terms-of-service (the “Enterprise Terms”), or other
+at https://example.com/terms-of-service (the “Enterprise Terms”), or other
 agreement governing the use of the Software, as agreed by you and Neosync,
 and otherwise have a valid Neosync Enterprise License for the
 correct number of user seats. Subject to the foregoing sentence, you are free to

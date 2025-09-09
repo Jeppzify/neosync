@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	neosynclogger "github.com/nucleuscloud/neosync/backend/pkg/logger"
-	serve_connect "github.com/nucleuscloud/neosync/worker/internal/cmds/worker/serve"
+	neosynclogger "github.com/Jeppzify/neosync/backend/pkg/logger"
+	serve_connect "github.com/Jeppzify/neosync/worker/internal/cmds/worker/serve"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

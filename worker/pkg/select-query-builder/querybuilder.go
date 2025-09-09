@@ -11,9 +11,9 @@ import (
 	_ "github.com/doug-martin/goqu/v9/dialect/postgres"
 	_ "github.com/doug-martin/goqu/v9/dialect/sqlserver"
 	"github.com/doug-martin/goqu/v9/exp"
-	sqlmanager_shared "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/shared"
-	"github.com/nucleuscloud/neosync/internal/runconfigs"
-	tsql_parser "github.com/nucleuscloud/neosync/worker/pkg/select-query-builder/tsql"
+	sqlmanager_shared "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/shared"
+	"github.com/Jeppzify/neosync/internal/runconfigs"
+	tsql_parser "github.com/Jeppzify/neosync/worker/pkg/select-query-builder/tsql"
 	pg_query "github.com/pganalyze/pg_query_go/v5"
 	"github.com/xwb1989/sqlparser"
 )

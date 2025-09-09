@@ -1,9 +1,9 @@
 apiVersion: v2
 name: worker
 description: A Helm chart for the Neosync Temporal Worker
-home: https://www.neosync.dev
+home: https://example.com
 sources:
-  - https://github.com/nucleuscloud/neosync
+  - https://github.com/Jeppzify/neosync
 icon: https://assets.nucleuscloud.com/neosync/newbrand/logo_small.png
 # A chart can be either an 'application' or a 'library' chart.
 #

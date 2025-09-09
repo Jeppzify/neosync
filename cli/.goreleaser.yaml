@@ -16,7 +16,7 @@ builds:
       - arm64
 
     ldflags:
-      - -s -w -X 'github.com/nucleuscloud/neosync/cli/internal/version.buildDate={{.Date}}' -X 'github.com/nucleuscloud/neosync/cli/internal/version.gitCommit={{.Commit}}' -X 'github.com/nucleuscloud/neosync/cli/internal/version.gitVersion={{.Version}}' -X 'github.com/nucleuscloud/neosync/cli/internal/auth.defaultBaseUrl={{ .Env.NEOSYNC_BASE_URL }}'
+      - -s -w -X 'github.com/Jeppzify/neosync/cli/internal/version.buildDate={{.Date}}' -X 'github.com/Jeppzify/neosync/cli/internal/version.gitCommit={{.Commit}}' -X 'github.com/Jeppzify/neosync/cli/internal/version.gitVersion={{.Version}}' -X 'github.com/Jeppzify/neosync/cli/internal/auth.defaultBaseUrl={{ .Env.NEOSYNC_BASE_URL }}'
 
     main: ./cmd/neosync
 
@@ -51,7 +51,7 @@ brews:
       owner: nucleuscloud
       name: homebrew-tap
     directory: Formula
-    homepage: https://www.neosync.dev
+    homepage: https://example.com
     description: CLI for interfacing with Neosync
     license: MIT
 archives:
@@ -61,7 +61,7 @@ archives:
         format: zip
 
 aurs:
-  - homepage: https://www.neosync.dev
+  - homepage: https://example.com
     description: CLI for interfacing with Neosync
     maintainers:
       - Devops <devops@nucleuscloud.com>
@@ -87,8 +87,8 @@ dockers:
       - --platform=linux/amd64
       - --label=org.opencontainers.image.title={{ .ProjectName }}
       - --label=org.opencontainers.image.description={{ .ProjectName }}
-      - --label=org.opencontainers.image.url=https://github.com/nucleuscloud/neosync/cli
-      - --label=org.opencontainers.image.source=https://github.com/nucleuscloud/neosync/cli
+      - --label=org.opencontainers.image.url=https://github.com/Jeppzify/neosync/cli
+      - --label=org.opencontainers.image.source=https://github.com/Jeppzify/neosync/cli
       - --label=org.opencontainers.image.version={{ .Version }}
       - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
@@ -100,8 +100,8 @@ dockers:
       - --platform=linux/arm64
       - --label=org.opencontainers.image.title={{ .ProjectName }}
       - --label=org.opencontainers.image.description={{ .ProjectName }}
-      - --label=org.opencontainers.image.url=https://github.com/nucleuscloud/neosync/cli
-      - --label=org.opencontainers.image.source=https://github.com/nucleuscloud/neosync/cli
+      - --label=org.opencontainers.image.url=https://github.com/Jeppzify/neosync/cli
+      - --label=org.opencontainers.image.source=https://github.com/Jeppzify/neosync/cli
       - --label=org.opencontainers.image.version={{ .Version }}
       - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
       - --label=org.opencontainers.image.revision={{ .FullCommit }}

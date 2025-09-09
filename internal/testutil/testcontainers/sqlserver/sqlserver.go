@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/nucleuscloud/neosync/internal/sshtunnel/connectors/mssqltunconnector"
-	"github.com/nucleuscloud/neosync/internal/testutil"
+	"github.com/Jeppzify/neosync/internal/sshtunnel/connectors/mssqltunconnector"
+	"github.com/Jeppzify/neosync/internal/testutil"
 	"github.com/testcontainers/testcontainers-go"
 	testmssql "github.com/testcontainers/testcontainers-go/modules/mssql"
 	"github.com/testcontainers/testcontainers-go/wait"

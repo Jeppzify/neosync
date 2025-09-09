@@ -2,19 +2,19 @@ openapi: 3.1.0
 info:
   summary: Neosync API
   version: "0.5"
-  termsOfService: "https://www.neosync.dev/terms-of-service"
+  termsOfService: "https://example.com/terms-of-service"
   contact:
     name: Neosync Support
-    email: support@neosync.dev
+    email: support@example.com
   license:
     name: MIT
-    url: https://github.com/nucleuscloud/neosync/blob/main/LICENSE.md
+    url: https://github.com/Jeppzify/neosync/blob/main/LICENSE.md
   title: mgmt.v1alpha1
 externalDocs:
   description: API and SDK Documentation
-  url: https://docs.neosync.dev/api
+  url: https://docs.example.com/api
 servers:
-  - url: https://neosync-api.svcs.neosync.dev
+  - url: https://neosync-api.svcs.example.com
     description: Neosync Cloud
   - url: http://localhost:{port}
     description: Development
@@ -40,7 +40,7 @@ components:
         values:
           type: array
           items:
-            $ref: '#/components/schemas/google.protobuf.Value'
+            $ref: "#/components/schemas/google.protobuf.Value"
           title: values
           description: Repeated field of dynamically typed values.
       title: ListValue
@@ -57,7 +57,7 @@ components:
           title: fields
           additionalProperties:
             allOf:
-              - $ref: '#/components/schemas/google.protobuf.Value'
+              - $ref: "#/components/schemas/google.protobuf.Value"
             title: value
           description: Unordered map of dynamically typed values.
       title: Struct
@@ -79,7 +79,7 @@ components:
           title: key
         value:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Value'
+            - $ref: "#/components/schemas/google.protobuf.Value"
           title: value
       title: FieldsEntry
       additionalProperties: false
@@ -247,31 +247,31 @@ components:
       properties:
         pgConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSchemaConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSchemaConfig"
           title: pg_config
         awsS3Config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AwsS3SchemaConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AwsS3SchemaConfig"
           title: aws_s3_config
         mysqlConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSchemaConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSchemaConfig"
           title: mysql_config
         mongoConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MongoSchemaConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MongoSchemaConfig"
           title: mongo_config
         gcpCloudstorageConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GcpCloudStorageSchemaConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GcpCloudStorageSchemaConfig"
           title: gcp_cloudstorage_config
         dynamodbConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.DynamoDBSchemaConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.DynamoDBSchemaConfig"
           title: dynamodb_config
         mssqlConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSchemaConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSchemaConfig"
           title: mssql_config
       title: ConnectionSchemaConfig
       additionalProperties: false
@@ -327,23 +327,23 @@ components:
       properties:
         pgConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresStreamConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresStreamConfig"
           title: pg_config
         awsS3Config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AwsS3StreamConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AwsS3StreamConfig"
           title: aws_s3_config
         mysqlConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlStreamConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlStreamConfig"
           title: mysql_config
         gcpCloudstorageConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GcpCloudStorageStreamConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GcpCloudStorageStreamConfig"
           title: gcp_cloudstorage_config
         dynamodbConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AwsDynamoDBStreamConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AwsDynamoDBStreamConfig"
           title: dynamodb_config
       title: ConnectionStreamConfig
       additionalProperties: false
@@ -375,7 +375,7 @@ components:
         schema:
           type: string
           title: schema
-          description: 'The database schema. Ex: public'
+          description: "The database schema. Ex: public"
         table:
           type: string
           title: table
@@ -432,7 +432,7 @@ components:
       properties:
         foreignKey:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ForeignKey'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ForeignKey"
           title: foreign_key
           description: The foreign key that is associated with the constraint
         columns:
@@ -455,7 +455,7 @@ components:
         constraints:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.ForeignConstraint'
+            $ref: "#/components/schemas/mgmt.v1alpha1.ForeignConstraint"
           title: constraints
           description: A list of foreign key constraints
       title: ForeignConstraintTables
@@ -599,7 +599,7 @@ components:
           description: The unique identifier of a connection that the AI generated data would be inserted into. This is used to generate and send schema information to the LLM to help shape the generated data.
         table:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.DatabaseTable'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.DatabaseTable"
           title: table
           description: The table to generate data for.
       title: GetAiGeneratedDataRequest
@@ -610,7 +610,7 @@ components:
         records:
           type: array
           items:
-            $ref: '#/components/schemas/google.protobuf.Struct'
+            $ref: "#/components/schemas/google.protobuf.Struct"
           title: records
           description: A list of generated records
       title: GetAiGeneratedDataResponse
@@ -632,13 +632,13 @@ components:
         schemas:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.GetAllSchemasAndTablesResponse.Schema'
+            $ref: "#/components/schemas/mgmt.v1alpha1.GetAllSchemasAndTablesResponse.Schema"
           title: schemas
           description: A list of all the schemas for a connection. Empty schemas (those without any tables) will appear in this list.
         tables:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.GetAllSchemasAndTablesResponse.Table'
+            $ref: "#/components/schemas/mgmt.v1alpha1.GetAllSchemasAndTablesResponse.Table"
           title: tables
           description: A list of all the tables for the connection
       title: GetAllSchemasAndTablesResponse
@@ -678,7 +678,7 @@ components:
           description: The unique identifier of the connection to get the data stream for.
         streamConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ConnectionStreamConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ConnectionStreamConfig"
           title: stream_config
           description: The stream configuration to use for the data stream.
         schema:
@@ -712,7 +712,7 @@ components:
           description: The unique identifier of the connection to get the init statements for.
         options:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.InitStatementOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.InitStatementOptions"
           title: options
           description: The options to use for the init statements.
       title: GetConnectionInitStatementsRequest
@@ -726,7 +726,7 @@ components:
           additionalProperties:
             type: string
             title: value
-          description: '@deprecated - Use schema_init_statements instead'
+          description: "@deprecated - Use schema_init_statements instead"
         tableTruncateStatements:
           type: object
           title: table_truncate_statements
@@ -737,7 +737,7 @@ components:
         schemaInitStatements:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.SchemaInitStatements'
+            $ref: "#/components/schemas/mgmt.v1alpha1.SchemaInitStatements"
           title: schema_init_statements
           description: A list of schema initialization statements
       title: GetConnectionInitStatementsResponse
@@ -775,7 +775,7 @@ components:
           description: The unique identifier of the connection to get the schema map for.
         schemaConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ConnectionSchemaConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ConnectionSchemaConfig"
           title: schema_config
           description: The schema configuration to use for the schema map.
       title: GetConnectionSchemaMapRequest
@@ -788,7 +788,7 @@ components:
           title: schema_map
           additionalProperties:
             allOf:
-              - $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaResponse'
+              - $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaResponse"
             title: value
           description: Returns the database columns separated by the fully qualified <schema>.<table>
       title: GetConnectionSchemaMapResponse
@@ -801,7 +801,7 @@ components:
           title: key
         value:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaResponse'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaResponse"
           title: value
       title: SchemaMapEntry
       additionalProperties: false
@@ -811,7 +811,7 @@ components:
         requests:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapRequest'
+            $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapRequest"
           title: requests
           description: List of connection schema maps to request
       title: GetConnectionSchemaMapsRequest
@@ -822,7 +822,7 @@ components:
         responses:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapResponse'
+            $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapResponse"
           title: responses
           description: List of responses in the same order as the input
         connectionIds:
@@ -843,7 +843,7 @@ components:
           description: The unique identifier of the connection to get the schema for.
         schemaConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ConnectionSchemaConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ConnectionSchemaConfig"
           title: schema_config
           description: The schema configuration to use for the schema map.
       title: GetConnectionSchemaRequest
@@ -854,7 +854,7 @@ components:
         schemas:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.DatabaseColumn'
+            $ref: "#/components/schemas/mgmt.v1alpha1.DatabaseColumn"
           title: schemas
           description: The list of database columns
       title: GetConnectionSchemaResponse
@@ -877,7 +877,7 @@ components:
           title: foreign_key_constraints
           additionalProperties:
             allOf:
-              - $ref: '#/components/schemas/mgmt.v1alpha1.ForeignConstraintTables'
+              - $ref: "#/components/schemas/mgmt.v1alpha1.ForeignConstraintTables"
             title: value
           description: the key here is <schema>.<table> and the list of tables that it depends on, also `<schema>.<table>` format.
         primaryKeyConstraints:
@@ -885,7 +885,7 @@ components:
           title: primary_key_constraints
           additionalProperties:
             allOf:
-              - $ref: '#/components/schemas/mgmt.v1alpha1.PrimaryConstraint'
+              - $ref: "#/components/schemas/mgmt.v1alpha1.PrimaryConstraint"
             title: value
           description: the key here is <schema>.<table> and value is the primary constraint
         uniqueConstraints:
@@ -893,7 +893,7 @@ components:
           title: unique_constraints
           additionalProperties:
             allOf:
-              - $ref: '#/components/schemas/mgmt.v1alpha1.UniqueConstraints'
+              - $ref: "#/components/schemas/mgmt.v1alpha1.UniqueConstraints"
             title: value
           description: the key here is <schema>.<table> and value is the unique constraint
         uniqueIndexes:
@@ -901,7 +901,7 @@ components:
           title: unique_indexes
           additionalProperties:
             allOf:
-              - $ref: '#/components/schemas/mgmt.v1alpha1.UniqueIndexes'
+              - $ref: "#/components/schemas/mgmt.v1alpha1.UniqueIndexes"
             title: value
           description: the key here is <schema>.<table> and value is the unique index
       title: GetConnectionTableConstraintsResponse
@@ -914,7 +914,7 @@ components:
           title: key
         value:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ForeignConstraintTables'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ForeignConstraintTables"
           title: value
       title: ForeignKeyConstraintsEntry
       additionalProperties: false
@@ -926,7 +926,7 @@ components:
           title: key
         value:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PrimaryConstraint'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PrimaryConstraint"
           title: value
       title: PrimaryKeyConstraintsEntry
       additionalProperties: false
@@ -938,7 +938,7 @@ components:
           title: key
         value:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.UniqueConstraints'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.UniqueConstraints"
           title: value
       title: UniqueConstraintsEntry
       additionalProperties: false
@@ -950,7 +950,7 @@ components:
           title: key
         value:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.UniqueIndexes'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.UniqueIndexes"
           title: value
       title: UniqueIndexesEntry
       additionalProperties: false
@@ -1089,7 +1089,7 @@ components:
         constraints:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.UniqueConstraint'
+            $ref: "#/components/schemas/mgmt.v1alpha1.UniqueConstraint"
           title: constraints
           description: The unique constraints found for the table
       title: UniqueConstraints
@@ -1111,7 +1111,7 @@ components:
         indexes:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.UniqueIndex'
+            $ref: "#/components/schemas/mgmt.v1alpha1.UniqueIndex"
           title: indexes
           description: The unique indexes found for the table
       title: UniqueIndexes
@@ -1155,10 +1155,10 @@ components:
           type: string
           description: A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
         detail:
-          $ref: '#/components/schemas/google.protobuf.Any'
+          $ref: "#/components/schemas/google.protobuf.Any"
       title: Connect Error
       additionalProperties: true
-      description: 'Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation'
+      description: "Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation"
     google.protobuf.Any:
       type: object
       properties:
@@ -1188,16 +1188,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaRequest"
         required: true
       responses:
         default:
@@ -1205,13 +1205,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaResponse"
   /mgmt.v1alpha1.ConnectionDataService/GetConnectionSchemaMap:
     post:
       tags:
@@ -1224,16 +1224,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapRequest"
         required: true
       responses:
         default:
@@ -1241,13 +1241,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapResponse"
   /mgmt.v1alpha1.ConnectionDataService/GetConnectionSchemaMaps:
     post:
       tags:
@@ -1260,16 +1260,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapsRequest"
         required: true
       responses:
         default:
@@ -1277,13 +1277,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionSchemaMapsResponse"
   /mgmt.v1alpha1.ConnectionDataService/GetConnectionTableConstraints:
     post:
       tags:
@@ -1296,16 +1296,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionTableConstraintsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionTableConstraintsRequest"
         required: true
       responses:
         default:
@@ -1313,13 +1313,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionTableConstraintsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionTableConstraintsResponse"
   /mgmt.v1alpha1.ConnectionDataService/GetConnectionInitStatements:
     post:
       tags:
@@ -1334,16 +1334,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionInitStatementsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionInitStatementsRequest"
         required: true
       responses:
         default:
@@ -1351,13 +1351,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionInitStatementsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionInitStatementsResponse"
   /mgmt.v1alpha1.ConnectionDataService/GetAiGeneratedData:
     post:
       tags:
@@ -1370,16 +1370,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetAiGeneratedDataRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetAiGeneratedDataRequest"
         required: true
       responses:
         default:
@@ -1387,13 +1387,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetAiGeneratedDataResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetAiGeneratedDataResponse"
   /mgmt.v1alpha1.ConnectionDataService/GetTableRowCount:
     post:
       tags:
@@ -1406,16 +1406,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetTableRowCountRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetTableRowCountRequest"
         required: true
       responses:
         default:
@@ -1423,13 +1423,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetTableRowCountResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetTableRowCountResponse"
   /mgmt.v1alpha1.ConnectionDataService/GetAllSchemasAndTables:
     post:
       tags:
@@ -1442,16 +1442,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetAllSchemasAndTablesRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetAllSchemasAndTablesRequest"
         required: true
       responses:
         default:
@@ -1459,13 +1459,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetAllSchemasAndTablesResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetAllSchemasAndTablesResponse"
 tags:
   - name: mgmt.v1alpha1.ConnectionDataService
     description: |-

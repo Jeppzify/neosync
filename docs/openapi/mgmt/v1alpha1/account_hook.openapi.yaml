@@ -2,19 +2,19 @@ openapi: 3.1.0
 info:
   summary: Neosync API
   version: "0.5"
-  termsOfService: "https://www.neosync.dev/terms-of-service"
+  termsOfService: "https://example.com/terms-of-service"
   contact:
     name: Neosync Support
-    email: support@neosync.dev
+    email: support@example.com
   license:
     name: MIT
-    url: https://github.com/nucleuscloud/neosync/blob/main/LICENSE.md
+    url: https://github.com/Jeppzify/neosync/blob/main/LICENSE.md
   title: mgmt.v1alpha1
 externalDocs:
   description: API and SDK Documentation
-  url: https://docs.neosync.dev/api
+  url: https://docs.example.com/api
 servers:
-  - url: https://neosync-api.svcs.neosync.dev
+  - url: https://neosync-api.svcs.example.com
     description: Neosync Cloud
   - url: http://localhost:{port}
     description: Development
@@ -148,12 +148,12 @@ components:
         events:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.AccountHookEvent'
+            $ref: "#/components/schemas/mgmt.v1alpha1.AccountHookEvent"
           title: events
           description: The events that will trigger this hook.
         config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountHookConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountHookConfig"
           title: config
           description: Hook-type specific configuration.
         createdByUserId:
@@ -162,7 +162,7 @@ components:
           description: The user that created this hook.
         createdAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: created_at
           description: The time this hook was created.
         updatedByUserId:
@@ -171,7 +171,7 @@ components:
           description: The user that last updated this hook.
         updatedAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: updated_at
           description: The last time this hook was updated.
         enabled:
@@ -208,14 +208,14 @@ components:
       properties:
         webhook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountHookConfig.WebHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountHookConfig.WebHook"
           title: webhook
           description: Webhook-based hooks
         slack:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountHookConfig.SlackHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountHookConfig.SlackHook"
           title: slack
-          description: 'Slack-based hooks Future: Discord, Teams, etc.'
+          description: "Slack-based hooks Future: Discord, Teams, etc."
       title: AccountHookConfig
       additionalProperties: false
       description: Hook-specific configuration
@@ -260,7 +260,7 @@ components:
           description: The account ID to create the hook for.
         hook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.NewAccountHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.NewAccountHook"
           title: hook
           description: The new account hook configuration.
       title: CreateAccountHookRequest
@@ -272,7 +272,7 @@ components:
       properties:
         hook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountHook"
           title: hook
           description: The newly created account hook.
       title: CreateAccountHookResponse
@@ -292,7 +292,7 @@ components:
       properties:
         hook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountHook"
           title: hook
           description: The deleted account hook.
       title: DeleteAccountHookResponse
@@ -312,7 +312,7 @@ components:
       properties:
         hook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountHook"
           title: hook
           description: The account hook.
       title: GetAccountHookResponse
@@ -333,7 +333,7 @@ components:
         hooks:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.AccountHook'
+            $ref: "#/components/schemas/mgmt.v1alpha1.AccountHook"
           title: hooks
           description: The list of account hooks.
       title: GetAccountHooksResponse
@@ -348,7 +348,7 @@ components:
           description: The account ID to retrieve hooks for.
         event:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountHookEvent'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountHookEvent"
           title: event
           description: |-
             The event to retrieve hooks for.
@@ -362,7 +362,7 @@ components:
         hooks:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.AccountHook'
+            $ref: "#/components/schemas/mgmt.v1alpha1.AccountHook"
           title: hooks
           description: The list of active account hooks.
       title: GetActiveAccountHooksByEventResponse
@@ -445,13 +445,13 @@ components:
         events:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.AccountHookEvent'
+            $ref: "#/components/schemas/mgmt.v1alpha1.AccountHookEvent"
           title: events
           minItems: 1
           description: The events that will trigger this hook.
         config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountHookConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountHookConfig"
           title: config
           description: Hook-type specific configuration.
         enabled:
@@ -500,7 +500,7 @@ components:
       properties:
         hook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountHook"
           title: hook
           description: The updated account hook.
       title: SetAccountHookEnabledResponse
@@ -539,7 +539,7 @@ components:
           description: Whether there is an existing Slack configuration.
         testResponse:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TestSlackConnectionResponse.Response'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TestSlackConnectionResponse.Response"
           title: test_response
           description: The response from the Slack API.
         error:
@@ -582,13 +582,13 @@ components:
         events:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.AccountHookEvent'
+            $ref: "#/components/schemas/mgmt.v1alpha1.AccountHookEvent"
           title: events
           minItems: 1
           description: The events that will trigger this hook.
         config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountHookConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountHookConfig"
           title: config
           description: Hook-type specific configuration.
         enabled:
@@ -602,7 +602,7 @@ components:
       properties:
         hook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountHook"
           title: hook
           description: The updated account hook.
       title: UpdateAccountHookResponse
@@ -646,10 +646,10 @@ components:
           type: string
           description: A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
         detail:
-          $ref: '#/components/schemas/google.protobuf.Any'
+          $ref: "#/components/schemas/google.protobuf.Any"
       title: Connect Error
       additionalProperties: true
-      description: 'Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation'
+      description: "Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation"
     google.protobuf.Any:
       type: object
       properties:
@@ -678,16 +678,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetAccountHooksRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetAccountHooksRequest"
         required: true
       responses:
         default:
@@ -695,13 +695,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetAccountHooksResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetAccountHooksResponse"
   /mgmt.v1alpha1.AccountHookService/GetAccountHook:
     post:
       tags:
@@ -714,16 +714,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetAccountHookRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetAccountHookRequest"
         required: true
       responses:
         default:
@@ -731,13 +731,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetAccountHookResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetAccountHookResponse"
   /mgmt.v1alpha1.AccountHookService/CreateAccountHook:
     post:
       tags:
@@ -750,16 +750,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CreateAccountHookRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CreateAccountHookRequest"
         required: true
       responses:
         default:
@@ -767,13 +767,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CreateAccountHookResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CreateAccountHookResponse"
   /mgmt.v1alpha1.AccountHookService/UpdateAccountHook:
     post:
       tags:
@@ -786,16 +786,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.UpdateAccountHookRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.UpdateAccountHookRequest"
         required: true
       responses:
         default:
@@ -803,13 +803,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.UpdateAccountHookResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.UpdateAccountHookResponse"
   /mgmt.v1alpha1.AccountHookService/DeleteAccountHook:
     post:
       tags:
@@ -822,16 +822,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.DeleteAccountHookRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.DeleteAccountHookRequest"
         required: true
       responses:
         default:
@@ -839,13 +839,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.DeleteAccountHookResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.DeleteAccountHookResponse"
   /mgmt.v1alpha1.AccountHookService/IsAccountHookNameAvailable:
     post:
       tags:
@@ -858,16 +858,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.IsAccountHookNameAvailableRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.IsAccountHookNameAvailableRequest"
         required: true
       responses:
         default:
@@ -875,13 +875,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.IsAccountHookNameAvailableResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.IsAccountHookNameAvailableResponse"
   /mgmt.v1alpha1.AccountHookService/SetAccountHookEnabled:
     post:
       tags:
@@ -894,16 +894,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.SetAccountHookEnabledRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.SetAccountHookEnabledRequest"
         required: true
       responses:
         default:
@@ -911,13 +911,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.SetAccountHookEnabledResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.SetAccountHookEnabledResponse"
   /mgmt.v1alpha1.AccountHookService/GetActiveAccountHooksByEvent:
     post:
       tags:
@@ -930,16 +930,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetActiveAccountHooksByEventRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetActiveAccountHooksByEventRequest"
         required: true
       responses:
         default:
@@ -947,13 +947,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetActiveAccountHooksByEventResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetActiveAccountHooksByEventResponse"
   /mgmt.v1alpha1.AccountHookService/GetSlackConnectionUrl:
     post:
       tags:
@@ -966,16 +966,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetSlackConnectionUrlRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetSlackConnectionUrlRequest"
         required: true
       responses:
         default:
@@ -983,13 +983,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetSlackConnectionUrlResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetSlackConnectionUrlResponse"
   /mgmt.v1alpha1.AccountHookService/HandleSlackOAuthCallback:
     post:
       tags:
@@ -1002,16 +1002,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.HandleSlackOAuthCallbackRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.HandleSlackOAuthCallbackRequest"
         required: true
       responses:
         default:
@@ -1019,13 +1019,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.HandleSlackOAuthCallbackResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.HandleSlackOAuthCallbackResponse"
   /mgmt.v1alpha1.AccountHookService/TestSlackConnection:
     post:
       tags:
@@ -1038,16 +1038,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.TestSlackConnectionRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.TestSlackConnectionRequest"
         required: true
       responses:
         default:
@@ -1055,13 +1055,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.TestSlackConnectionResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.TestSlackConnectionResponse"
   /mgmt.v1alpha1.AccountHookService/SendSlackMessage:
     post:
       tags:
@@ -1074,16 +1074,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.SendSlackMessageRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.SendSlackMessageRequest"
         required: true
       responses:
         default:
@@ -1091,12 +1091,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.SendSlackMessageResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.SendSlackMessageResponse"
 tags:
   - name: mgmt.v1alpha1.AccountHookService

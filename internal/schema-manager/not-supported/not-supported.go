@@ -3,8 +3,8 @@ package schemamanager_notsupported
 import (
 	"context"
 
-	sqlmanager_shared "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/shared"
-	shared "github.com/nucleuscloud/neosync/internal/schema-manager/shared"
+	sqlmanager_shared "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/shared"
+	shared "github.com/Jeppzify/neosync/internal/schema-manager/shared"
 )
 
 type NotSupportedSchemaManager struct {

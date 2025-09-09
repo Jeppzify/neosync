@@ -7,15 +7,15 @@ import (
 
 	"connectrpc.com/connect"
 	"github.com/dop251/goja"
-	db_queries "github.com/nucleuscloud/neosync/backend/gen/go/db"
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	logger_interceptor "github.com/nucleuscloud/neosync/backend/internal/connect/interceptors/logger"
-	"github.com/nucleuscloud/neosync/backend/internal/dtomaps"
-	"github.com/nucleuscloud/neosync/backend/internal/userdata"
-	pg_models "github.com/nucleuscloud/neosync/backend/sql/postgresql/models"
-	"github.com/nucleuscloud/neosync/internal/ee/rbac"
-	nucleuserrors "github.com/nucleuscloud/neosync/internal/errors"
-	"github.com/nucleuscloud/neosync/internal/neosyncdb"
+	db_queries "github.com/Jeppzify/neosync/backend/gen/go/db"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	logger_interceptor "github.com/Jeppzify/neosync/backend/internal/connect/interceptors/logger"
+	"github.com/Jeppzify/neosync/backend/internal/dtomaps"
+	"github.com/Jeppzify/neosync/backend/internal/userdata"
+	pg_models "github.com/Jeppzify/neosync/backend/sql/postgresql/models"
+	"github.com/Jeppzify/neosync/internal/ee/rbac"
+	nucleuserrors "github.com/Jeppzify/neosync/internal/errors"
+	"github.com/Jeppzify/neosync/internal/neosyncdb"
 )
 
 func (s *Service) GetUserDefinedTransformers(

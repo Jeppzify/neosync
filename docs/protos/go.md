@@ -18,7 +18,7 @@ The Neosync Go SDK is publicly available and can be added to any Go project. Wit
 
 You can add the Neosync Go SDK using:
 
-`go get github.com/nucleuscloud/neosync`.
+`go get github.com/Jeppzify/neosync`.
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ There are a few prerequisites that the SDK needs in order to be properly configu
 
 | **Properties** | **Details**                                                                                                                                                                 |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **API URL**    | Production: `https://neosync-api.svcs.neosync.dev`<br /> Local: `http://localhost:8080`                                                                                     |
+| **API URL**    | Production: `https://github.com/Jeppzify/neosync`<br /> Local: `http://localhost:8080`                                                                                     |
 | **Account ID** | The account ID may be necessary for some requests and can be found by going into the `/:accountName/settings` page in the Neosync App                                       |
 | **API Key**    | An access token (API key, or user JWT) must be used to access authenticated Neosync environments. For an API Key, this can be created at `/:accountName/settings/api-keys`. |
 
@@ -50,8 +50,8 @@ import (
 	"net/http"
 
 	"connectrpc.com/connect"
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	"github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	"github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
 )
 
 func main() {
@@ -100,8 +100,8 @@ In this section, we're going to walk through two examples that show you how to m
 
 Neosync is made up of a number of different services that live inside of the same process. In order to connect to the Neosync API and use the services, we make two packages available:
 
-- `github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1`
-- `github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect`
+- `github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1`
+- `github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect`
 
 The first package is made up of the generated types. This includes all of the request, response, and DTO types.
 
@@ -142,8 +142,8 @@ import (
 	"net/http"
 
 	"connectrpc.com/connect"
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	"github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	"github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
 )
 
 // define our User struct and use json tags to structure our json
@@ -284,7 +284,7 @@ The best part is that all you have to do is change a transformer, that's it! Her
   },
 ```
 
-Our input object is a transcription from a call from a doctor's office. In this transcript, we have PII (personally identifiable information) such as names (John Chang, Jake), social security number (246-80-1357) and dates(8/1/2024). Using Neosync's `TransformPiiText` transformer, you can easily anonymize the sensitive data in this text. See [here](https://docs.neosync.dev/api/mgmt/v1alpha1/transformer.proto#transformpiitext) for the `TransformPiiText` proto definition.
+Our input object is a transcription from a call from a doctor's office. In this transcript, we have PII (personally identifiable information) such as names (John Chang, Jake), social security number (246-80-1357) and dates(8/1/2024). Using Neosync's `TransformPiiText` transformer, you can easily anonymize the sensitive data in this text. See [here](https://docs.example.com/api/mgmt/v1alpha1/transformer.proto#transformpiitext) for the `TransformPiiText` proto definition.
 
 ```go
 package main
@@ -296,8 +296,8 @@ import (
 	"net/http"
 
 	"connectrpc.com/connect"
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	"github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	"github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
 )
 
 // define our User struct and use json tags to structure our json

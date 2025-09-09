@@ -2,19 +2,19 @@ openapi: 3.1.0
 info:
   summary: Neosync API
   version: "0.5"
-  termsOfService: "https://www.neosync.dev/terms-of-service"
+  termsOfService: "https://example.com/terms-of-service"
   contact:
     name: Neosync Support
-    email: support@neosync.dev
+    email: support@example.com
   license:
     name: MIT
-    url: https://github.com/nucleuscloud/neosync/blob/main/LICENSE.md
+    url: https://github.com/Jeppzify/neosync/blob/main/LICENSE.md
   title: mgmt.v1alpha1
 externalDocs:
   description: API and SDK Documentation
-  url: https://docs.neosync.dev/api
+  url: https://docs.example.com/api
 servers:
-  - url: https://neosync-api.svcs.neosync.dev
+  - url: https://neosync-api.svcs.example.com
     description: Neosync Cloud
   - url: http://localhost:{port}
     description: Development
@@ -146,7 +146,7 @@ components:
       properties:
         accessToken:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccessToken'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccessToken"
           title: access_token
           description: The access token that is returned on successful login
       title: LoginCliResponse
@@ -166,7 +166,7 @@ components:
       properties:
         accessToken:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccessToken'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccessToken"
           title: access_token
           description: The access token that is returned on successful refresh
       title: RefreshCliResponse
@@ -210,10 +210,10 @@ components:
           type: string
           description: A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
         detail:
-          $ref: '#/components/schemas/google.protobuf.Any'
+          $ref: "#/components/schemas/google.protobuf.Any"
       title: Connect Error
       additionalProperties: true
-      description: 'Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation'
+      description: "Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation"
     google.protobuf.Any:
       type: object
       properties:
@@ -242,16 +242,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.LoginCliRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.LoginCliRequest"
         required: true
       responses:
         default:
@@ -259,13 +259,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.LoginCliResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.LoginCliResponse"
   /mgmt.v1alpha1.AuthService/RefreshCli:
     post:
       tags:
@@ -280,16 +280,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.RefreshCliRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.RefreshCliRequest"
         required: true
       responses:
         default:
@@ -297,13 +297,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.RefreshCliResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.RefreshCliResponse"
   /mgmt.v1alpha1.AuthService/CheckToken:
     post:
       tags:
@@ -316,16 +316,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CheckTokenRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CheckTokenRequest"
         required: true
       responses:
         default:
@@ -333,13 +333,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CheckTokenResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CheckTokenResponse"
   /mgmt.v1alpha1.AuthService/GetAuthorizeUrl:
     post:
       tags:
@@ -352,16 +352,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetAuthorizeUrlRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetAuthorizeUrlRequest"
         required: true
       responses:
         default:
@@ -369,13 +369,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetAuthorizeUrlResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetAuthorizeUrlResponse"
   /mgmt.v1alpha1.AuthService/GetAuthStatus:
     post:
       tags:
@@ -390,16 +390,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetAuthStatusRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetAuthStatusRequest"
         required: true
       responses:
         default:
@@ -407,13 +407,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetAuthStatusResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetAuthStatusResponse"
 tags:
   - name: mgmt.v1alpha1.AuthService
     description: |-

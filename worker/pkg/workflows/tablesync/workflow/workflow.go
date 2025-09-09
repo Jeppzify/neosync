@@ -3,8 +3,8 @@ package tablesync_workflow
 import (
 	"errors"
 
-	sync_activity "github.com/nucleuscloud/neosync/worker/pkg/workflows/tablesync/activities/sync"
-	tablesync_shared "github.com/nucleuscloud/neosync/worker/pkg/workflows/tablesync/shared"
+	sync_activity "github.com/Jeppzify/neosync/worker/pkg/workflows/tablesync/activities/sync"
+	tablesync_shared "github.com/Jeppzify/neosync/worker/pkg/workflows/tablesync/shared"
 	"go.temporal.io/sdk/log"
 	"go.temporal.io/sdk/workflow"
 )

@@ -1,6 +1,6 @@
 package schemamanager_shared
 
-import sqlmanager_shared "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/shared"
+import sqlmanager_shared "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/shared"
 
 const (
 	BatchSizeConst = 20

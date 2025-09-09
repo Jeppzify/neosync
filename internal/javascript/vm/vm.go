@@ -9,7 +9,7 @@ import (
 	"github.com/dop251/goja"
 	"github.com/dop251/goja_nodejs/console"
 	"github.com/dop251/goja_nodejs/require"
-	javascript_functions "github.com/nucleuscloud/neosync/internal/javascript/functions"
+	javascript_functions "github.com/Jeppzify/neosync/internal/javascript/functions"
 )
 
 type Runner struct {

@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"sync"
 
-	mysql_queries "github.com/nucleuscloud/neosync/backend/gen/go/db/dbschemas/mysql"
-	sqlmanager_shared "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/shared"
-	continuation_token "github.com/nucleuscloud/neosync/internal/continuation-token"
-	database_record_mapper "github.com/nucleuscloud/neosync/internal/database-record-mapper"
-	record_mapper_builder "github.com/nucleuscloud/neosync/internal/database-record-mapper/builder"
-	neosync_benthos "github.com/nucleuscloud/neosync/worker/pkg/benthos"
+	mysql_queries "github.com/Jeppzify/neosync/backend/gen/go/db/dbschemas/mysql"
+	sqlmanager_shared "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/shared"
+	continuation_token "github.com/Jeppzify/neosync/internal/continuation-token"
+	database_record_mapper "github.com/Jeppzify/neosync/internal/database-record-mapper"
+	record_mapper_builder "github.com/Jeppzify/neosync/internal/database-record-mapper/builder"
+	neosync_benthos "github.com/Jeppzify/neosync/worker/pkg/benthos"
 	"github.com/redpanda-data/benthos/v4/public/service"
 )
 

@@ -6,12 +6,12 @@ import (
 	"log/slog"
 	"sync"
 
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	"github.com/nucleuscloud/neosync/backend/pkg/sqlmanager"
-	sqlmanager_mysql "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/mysql"
-	sqlmanager_shared "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/shared"
-	connectionmanager "github.com/nucleuscloud/neosync/internal/connection-manager"
-	shared "github.com/nucleuscloud/neosync/internal/schema-manager/shared"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	"github.com/Jeppzify/neosync/backend/pkg/sqlmanager"
+	sqlmanager_mysql "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/mysql"
+	sqlmanager_shared "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/shared"
+	connectionmanager "github.com/Jeppzify/neosync/internal/connection-manager"
+	shared "github.com/Jeppzify/neosync/internal/schema-manager/shared"
 	"golang.org/x/sync/errgroup"
 )
 

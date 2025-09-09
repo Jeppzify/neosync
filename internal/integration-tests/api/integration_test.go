@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	tcneosyncapi "github.com/nucleuscloud/neosync/backend/pkg/integration-test"
-	"github.com/nucleuscloud/neosync/internal/testutil"
+	tcneosyncapi "github.com/Jeppzify/neosync/backend/pkg/integration-test"
+	"github.com/Jeppzify/neosync/internal/testutil"
 	"github.com/stretchr/testify/suite"
 )
 

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	javascript_functions "github.com/nucleuscloud/neosync/internal/javascript/functions"
+	javascript_functions "github.com/Jeppzify/neosync/internal/javascript/functions"
 	"github.com/redpanda-data/benthos/v4/public/service"
 )
 

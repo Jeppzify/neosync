@@ -5,7 +5,7 @@ package sqlmanager
 import (
 	context "context"
 
-	connectionmanager "github.com/nucleuscloud/neosync/internal/connection-manager"
+	connectionmanager "github.com/Jeppzify/neosync/internal/connection-manager"
 
 	mock "github.com/stretchr/testify/mock"
 

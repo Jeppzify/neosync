@@ -1,8 +1,8 @@
 package selectquerybuilder
 
 import (
-	sqlmanager_shared "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/shared"
-	runcfg "github.com/nucleuscloud/neosync/internal/runconfigs"
+	sqlmanager_shared "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/shared"
+	runcfg "github.com/Jeppzify/neosync/internal/runconfigs"
 )
 
 // BuildSelectQueryMap builds a map of SelectQuery objects for each RunConfig.

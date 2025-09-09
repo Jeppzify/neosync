@@ -3,7 +3,7 @@ package neosynctypes
 import (
 	"testing"
 
-	"github.com/nucleuscloud/neosync/internal/testutil"
+	"github.com/Jeppzify/neosync/internal/testutil"
 	"github.com/stretchr/testify/require"
 )
 

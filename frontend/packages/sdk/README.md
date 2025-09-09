@@ -13,11 +13,11 @@ npm install @neosync/sdk @bufbuild/protobuf
 
 This README shows the basics of how to use the SDK.
 
-For more detailed docs, go [here](https://docs.neosync.dev/api/typescript).
+For more detailed docs, go [here](https://docs.example.com/api/typescript).
 
 ## Usage
 
-For a prime example of how to us this SDK, view the [withNeosyncContext](https://github.com/nucleuscloud/neosync/blob/main/frontend/apps/web/api-only/neosync-context.ts#L23) method in the Neosync app's BFF layer.
+For a prime example of how to us this SDK, view the [withNeosyncContext](https://github.com/Jeppzify/neosync/blob/main/frontend/apps/web/api-only/neosync-context.ts#L23) method in the Neosync app's BFF layer.
 
 ### Note on Transports
 

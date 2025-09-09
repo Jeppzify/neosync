@@ -2,19 +2,19 @@ openapi: 3.1.0
 info:
   summary: Neosync API
   version: "0.5"
-  termsOfService: "https://www.neosync.dev/terms-of-service"
+  termsOfService: "https://example.com/terms-of-service"
   contact:
     name: Neosync Support
-    email: support@neosync.dev
+    email: support@example.com
   license:
     name: MIT
-    url: https://github.com/nucleuscloud/neosync/blob/main/LICENSE.md
+    url: https://github.com/Jeppzify/neosync/blob/main/LICENSE.md
   title: mgmt.v1alpha1
 externalDocs:
   description: API and SDK Documentation
-  url: https://docs.neosync.dev/api
+  url: https://docs.example.com/api
 servers:
-  - url: https://neosync-api.svcs.neosync.dev
+  - url: https://neosync-api.svcs.example.com
     description: Neosync Cloud
   - url: http://localhost:{port}
     description: Development
@@ -110,12 +110,12 @@ components:
         transformerMappings:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.TransformerMapping'
+            $ref: "#/components/schemas/mgmt.v1alpha1.TransformerMapping"
           title: transformer_mappings
           description: Array of Transformer mappings
         defaultTransformers:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.DefaultTransformersConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.DefaultTransformersConfig"
           title: default_transformers
           description: Optional default transformations for any unmapped keys
         haltOnFailure:
@@ -143,7 +143,7 @@ components:
         errors:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.AnonymizeManyErrors'
+            $ref: "#/components/schemas/mgmt.v1alpha1.AnonymizeManyErrors"
           title: errors
           description: Array of errors that occured during anonymization
       title: AnonymizeManyResponse
@@ -173,12 +173,12 @@ components:
         transformerMappings:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.TransformerMapping'
+            $ref: "#/components/schemas/mgmt.v1alpha1.TransformerMapping"
           title: transformer_mappings
           description: Array of Transformer mappings
         defaultTransformers:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.DefaultTransformersConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.DefaultTransformersConfig"
           title: default_transformers
           description: Optional default transformations for any unmapped keys
         accountId:
@@ -202,17 +202,17 @@ components:
       properties:
         boolean:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformerConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformerConfig"
           title: boolean
           description: Any identified boolean value will be transformed using this configuration if no mapping is found.
         n:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformerConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformerConfig"
           title: n
           description: Any identified number value will be transformed using this configuration if no mapping is found.
         s:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformerConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformerConfig"
           title: s
           description: Any identified string value will be transformed using this configuration if no mapping is found.
       title: DefaultTransformersConfig
@@ -359,7 +359,7 @@ components:
       properties:
         emailType:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateEmailType'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateEmailType"
           title: email_type
           description: Optionally specify the type of email to generate. The types specified determine the contents on the left side of the @.
       title: GenerateEmail
@@ -524,7 +524,7 @@ components:
       properties:
         ipType:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateIpAddressType'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateIpAddressType"
           title: ip_type
           description: Optionally specify the type of ip address to generate.
       title: GenerateIpAddress
@@ -746,27 +746,27 @@ components:
       properties:
         replace:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Replace'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Replace"
           title: replace
           description: Configures the anonymizer to replace the identified PII with a specific value
         redact:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Redact'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Redact"
           title: redact
           description: Configures the anonymizer to completely remove the identified PII
         mask:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Mask'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Mask"
           title: mask
           description: Configures the anonymizer to mask the identified PII
         hash:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Hash'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Hash"
           title: hash
           description: Configures the anonymizer to hash the identified PII
         transform:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Transform'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Transform"
           title: transform
           description: Configures the anonymizer to use a Neosync configured transformer
       title: PiiAnonymizer
@@ -791,7 +791,7 @@ components:
       properties:
         algo:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Hash.HashType'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Hash.HashType"
           title: algo
           description: The hashing algorithm to use.
       title: Hash
@@ -861,7 +861,7 @@ components:
         value:
           type: string
           title: value
-          description: 'The value to replace. If not provided, a template token of the anonymizer is used (e.g. A PERSON entity is replaced with: <PERSON>)'
+          description: "The value to replace. If not provided, a template token of the anonymizer is used (e.g. A PERSON entity is replaced with: <PERSON>)"
       title: Replace
       additionalProperties: false
     mgmt.v1alpha1.PiiAnonymizer.Transform:
@@ -869,7 +869,7 @@ components:
       properties:
         config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformerConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformerConfig"
           title: config
           description: The transformer to use. If not provided, a transformer will automatically be selected (if supported), otherwise it falls back to generating a random hash.
       title: Transform
@@ -987,12 +987,12 @@ components:
           description: A lsit of email domains that should be excluded. This changes based on the preserve_domain flag. See the docs for more details.
         emailType:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateEmailType'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateEmailType"
           title: email_type
           description: Optionally specify the type of email to generate. The types specified determine the contents on the left side of the @.
         invalidEmailAction:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.InvalidEmailAction'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.InvalidEmailAction"
           title: invalid_email_action
           description: Optionally specify an action in the result of an invalid email. An invalid email is one that does not conform to RFC 5322.
       title: TransformEmail
@@ -1215,13 +1215,13 @@ components:
           description: Minimal detection score for determining PII. 0.0-1.0
         defaultAnonymizer:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer"
           title: default_anonymizer
           description: The default anonmyization config used for all instances of detected PII.
         denyRecognizers:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.PiiDenyRecognizer'
+            $ref: "#/components/schemas/mgmt.v1alpha1.PiiDenyRecognizer"
           title: deny_recognizers
           description: Configure deny lists where each word is treated as PII.
         allowedEntities:
@@ -1252,7 +1252,7 @@ components:
           title: entity_anonymizers
           additionalProperties:
             allOf:
-              - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer'
+              - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer"
             title: value
           description: |-
             A map of entity names to anonymizer configurations.
@@ -1270,7 +1270,7 @@ components:
           title: key
         value:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer"
           title: value
       title: EntityAnonymizersEntry
       additionalProperties: false
@@ -1705,196 +1705,196 @@ components:
       properties:
         generateEmailConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateEmail'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateEmail"
           title: generate_email_config
         transformEmailConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformEmail'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformEmail"
           title: transform_email_config
         generateBoolConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateBool'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateBool"
           title: generate_bool_config
         generateCardNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateCardNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateCardNumber"
           title: generate_card_number_config
         generateCityConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateCity'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateCity"
           title: generate_city_config
         generateE164PhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateE164PhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateE164PhoneNumber"
           title: generate_e164_phone_number_config
         generateFirstNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateFirstName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateFirstName"
           title: generate_first_name_config
         generateFloat64Config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateFloat64'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateFloat64"
           title: generate_float64_config
         generateFullAddressConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateFullAddress'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateFullAddress"
           title: generate_full_address_config
         generateFullNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateFullName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateFullName"
           title: generate_full_name_config
         generateGenderConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateGender'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateGender"
           title: generate_gender_config
         generateInt64PhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateInt64PhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateInt64PhoneNumber"
           title: generate_int64_phone_number_config
         generateInt64Config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateInt64'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateInt64"
           title: generate_int64_config
         generateLastNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateLastName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateLastName"
           title: generate_last_name_config
         generateSha256hashConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateSha256Hash'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateSha256Hash"
           title: generate_sha256hash_config
         generateSsnConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateSSN'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateSSN"
           title: generate_ssn_config
         generateStateConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateState'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateState"
           title: generate_state_config
         generateStreetAddressConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateStreetAddress'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateStreetAddress"
           title: generate_street_address_config
         generateStringPhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateStringPhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateStringPhoneNumber"
           title: generate_string_phone_number_config
         generateStringConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateString'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateString"
           title: generate_string_config
         generateUnixtimestampConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateUnixTimestamp'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateUnixTimestamp"
           title: generate_unixtimestamp_config
         generateUsernameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateUsername'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateUsername"
           title: generate_username_config
         generateUtctimestampConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateUtcTimestamp'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateUtcTimestamp"
           title: generate_utctimestamp_config
         generateUuidConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateUuid'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateUuid"
           title: generate_uuid_config
         generateZipcodeConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateZipcode'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateZipcode"
           title: generate_zipcode_config
         transformE164PhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformE164PhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformE164PhoneNumber"
           title: transform_e164_phone_number_config
         transformFirstNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformFirstName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformFirstName"
           title: transform_first_name_config
         transformFloat64Config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformFloat64'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformFloat64"
           title: transform_float64_config
         transformFullNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformFullName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformFullName"
           title: transform_full_name_config
         transformInt64PhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformInt64PhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformInt64PhoneNumber"
           title: transform_int64_phone_number_config
         transformInt64Config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformInt64'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformInt64"
           title: transform_int64_config
         transformLastNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformLastName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformLastName"
           title: transform_last_name_config
         transformPhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformPhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformPhoneNumber"
           title: transform_phone_number_config
         transformStringConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformString'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformString"
           title: transform_string_config
         passthroughConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Passthrough'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Passthrough"
           title: passthrough_config
         nullconfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Null'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Null"
           title: nullconfig
         userDefinedTransformerConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.UserDefinedTransformerConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.UserDefinedTransformerConfig"
           title: user_defined_transformer_config
         generateDefaultConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateDefault'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateDefault"
           title: generate_default_config
         transformJavascriptConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformJavascript'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformJavascript"
           title: transform_javascript_config
         generateCategoricalConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateCategorical'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateCategorical"
           title: generate_categorical_config
         transformCharacterScrambleConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformCharacterScramble'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformCharacterScramble"
           title: transform_character_scramble_config
         generateJavascriptConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateJavascript'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateJavascript"
           title: generate_javascript_config
         generateCountryConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateCountry'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateCountry"
           title: generate_country_config
         transformPiiTextConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformPiiText'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformPiiText"
           title: transform_pii_text_config
           description: NeosyncCloud/Enterprise only transformer for anonymizing PII Text
         generateBusinessNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateBusinessName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateBusinessName"
           title: generate_business_name_config
         generateIpAddressConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateIpAddress'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateIpAddress"
           title: generate_ip_address_config
         transformUuidConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformUuid'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformUuid"
           title: transform_uuid_config
         transformScrambleIdentityConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformScrambleIdentity'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformScrambleIdentity"
           title: transform_scramble_identity_config
           description: Scrambles an integer while keeping it unique.
       title: TransformerConfig
@@ -1909,7 +1909,7 @@ components:
           description: JQ Expression or Field Path to apply the transformation to
         transformer:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformerConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformerConfig"
           title: transformer
           description: Configuration of Transformer to apply
       title: TransformerMapping
@@ -1966,10 +1966,10 @@ components:
           type: string
           description: A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
         detail:
-          $ref: '#/components/schemas/google.protobuf.Any'
+          $ref: "#/components/schemas/google.protobuf.Any"
       title: Connect Error
       additionalProperties: true
-      description: 'Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation'
+      description: "Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation"
     google.protobuf.Any:
       type: object
       properties:
@@ -1998,16 +1998,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.AnonymizeManyRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.AnonymizeManyRequest"
         required: true
       responses:
         default:
@@ -2015,13 +2015,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.AnonymizeManyResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.AnonymizeManyResponse"
   /mgmt.v1alpha1.AnonymizationService/AnonymizeSingle:
     post:
       tags:
@@ -2034,16 +2034,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.AnonymizeSingleRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.AnonymizeSingleRequest"
         required: true
       responses:
         default:
@@ -2051,13 +2051,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.AnonymizeSingleResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.AnonymizeSingleResponse"
 tags:
   - name: mgmt.v1alpha1.AnonymizationService
     description: Service that transactionally anonymizes data, regardless of the connection type.

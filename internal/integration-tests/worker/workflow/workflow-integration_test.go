@@ -4,14 +4,14 @@ import (
 	"context"
 	"testing"
 
-	tcneosyncapi "github.com/nucleuscloud/neosync/backend/pkg/integration-test"
-	"github.com/nucleuscloud/neosync/internal/testutil"
-	tcdynamodb "github.com/nucleuscloud/neosync/internal/testutil/testcontainers/dynamodb"
-	tcmongodb "github.com/nucleuscloud/neosync/internal/testutil/testcontainers/mongodb"
-	tcmysql "github.com/nucleuscloud/neosync/internal/testutil/testcontainers/mysql"
-	tcpostgres "github.com/nucleuscloud/neosync/internal/testutil/testcontainers/postgres"
-	tcredis "github.com/nucleuscloud/neosync/internal/testutil/testcontainers/redis"
-	tcmssql "github.com/nucleuscloud/neosync/internal/testutil/testcontainers/sqlserver"
+	tcneosyncapi "github.com/Jeppzify/neosync/backend/pkg/integration-test"
+	"github.com/Jeppzify/neosync/internal/testutil"
+	tcdynamodb "github.com/Jeppzify/neosync/internal/testutil/testcontainers/dynamodb"
+	tcmongodb "github.com/Jeppzify/neosync/internal/testutil/testcontainers/mongodb"
+	tcmysql "github.com/Jeppzify/neosync/internal/testutil/testcontainers/mysql"
+	tcpostgres "github.com/Jeppzify/neosync/internal/testutil/testcontainers/postgres"
+	tcredis "github.com/Jeppzify/neosync/internal/testutil/testcontainers/redis"
+	tcmssql "github.com/Jeppzify/neosync/internal/testutil/testcontainers/sqlserver"
 	"github.com/stretchr/testify/require"
 )
 

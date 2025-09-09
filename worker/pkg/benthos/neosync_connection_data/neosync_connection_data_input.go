@@ -10,15 +10,15 @@ import (
 	"sync"
 
 	"connectrpc.com/connect"
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	"github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
-	benthosbuilder_shared "github.com/nucleuscloud/neosync/internal/benthos/benthos-builder/shared"
-	"github.com/nucleuscloud/neosync/internal/gotypeutil"
-	neosync_types "github.com/nucleuscloud/neosync/internal/types"
-	neosync_metadata "github.com/nucleuscloud/neosync/worker/pkg/benthos/metadata"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	"github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
+	benthosbuilder_shared "github.com/Jeppzify/neosync/internal/benthos/benthos-builder/shared"
+	"github.com/Jeppzify/neosync/internal/gotypeutil"
+	neosync_types "github.com/Jeppzify/neosync/internal/types"
+	neosync_metadata "github.com/Jeppzify/neosync/worker/pkg/benthos/metadata"
 
-	neosyncgob "github.com/nucleuscloud/neosync/internal/gob"
-	neosynctypes "github.com/nucleuscloud/neosync/internal/neosync-types"
+	neosyncgob "github.com/Jeppzify/neosync/internal/gob"
+	neosynctypes "github.com/Jeppzify/neosync/internal/neosync-types"
 	"github.com/redpanda-data/benthos/v4/public/service"
 )
 

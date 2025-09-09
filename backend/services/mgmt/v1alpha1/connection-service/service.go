@@ -1,12 +1,12 @@
 package v1alpha1_connectionservice
 
 import (
-	"github.com/nucleuscloud/neosync/backend/internal/userdata"
-	"github.com/nucleuscloud/neosync/backend/pkg/mongoconnect"
-	"github.com/nucleuscloud/neosync/backend/pkg/sqlconnect"
-	sql_manager "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager"
-	awsmanager "github.com/nucleuscloud/neosync/internal/aws"
-	"github.com/nucleuscloud/neosync/internal/neosyncdb"
+	"github.com/Jeppzify/neosync/backend/internal/userdata"
+	"github.com/Jeppzify/neosync/backend/pkg/mongoconnect"
+	"github.com/Jeppzify/neosync/backend/pkg/sqlconnect"
+	sql_manager "github.com/Jeppzify/neosync/backend/pkg/sqlmanager"
+	awsmanager "github.com/Jeppzify/neosync/internal/aws"
+	"github.com/Jeppzify/neosync/internal/neosyncdb"
 )
 
 type Service struct {

@@ -5,9 +5,9 @@ import (
 	"strings"
 	"testing"
 
-	accounthook_events "github.com/nucleuscloud/neosync/internal/ee/events"
-	execute_hook_activity "github.com/nucleuscloud/neosync/worker/pkg/workflows/ee/account_hooks/activities/execute"
-	hooks_by_event_activity "github.com/nucleuscloud/neosync/worker/pkg/workflows/ee/account_hooks/activities/hooks-by-event"
+	accounthook_events "github.com/Jeppzify/neosync/internal/ee/events"
+	execute_hook_activity "github.com/Jeppzify/neosync/worker/pkg/workflows/ee/account_hooks/activities/execute"
+	hooks_by_event_activity "github.com/Jeppzify/neosync/worker/pkg/workflows/ee/account_hooks/activities/hooks-by-event"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 	"go.temporal.io/sdk/testsuite"

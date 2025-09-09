@@ -11,14 +11,14 @@ import (
 	"sync"
 	"time"
 
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	dbconnectconfig "github.com/nucleuscloud/neosync/backend/pkg/dbconnect-config"
-	"github.com/nucleuscloud/neosync/backend/pkg/sqldbtx"
-	"github.com/nucleuscloud/neosync/backend/pkg/sqlretry"
-	tun "github.com/nucleuscloud/neosync/internal/sshtunnel"
-	"github.com/nucleuscloud/neosync/internal/sshtunnel/connectors/mssqltunconnector"
-	"github.com/nucleuscloud/neosync/internal/sshtunnel/connectors/mysqltunconnector"
-	"github.com/nucleuscloud/neosync/internal/sshtunnel/connectors/postgrestunconnector"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	dbconnectconfig "github.com/Jeppzify/neosync/backend/pkg/dbconnect-config"
+	"github.com/Jeppzify/neosync/backend/pkg/sqldbtx"
+	"github.com/Jeppzify/neosync/backend/pkg/sqlretry"
+	tun "github.com/Jeppzify/neosync/internal/sshtunnel"
+	"github.com/Jeppzify/neosync/internal/sshtunnel/connectors/mssqltunconnector"
+	"github.com/Jeppzify/neosync/internal/sshtunnel/connectors/mysqltunconnector"
+	"github.com/Jeppzify/neosync/internal/sshtunnel/connectors/postgrestunconnector"
 )
 
 // interface used by SqlConnector to abstract away the opening and closing of a sqldb that includes tunnelingff

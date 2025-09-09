@@ -7,12 +7,12 @@ import (
 	"log/slog"
 
 	"github.com/dop251/goja"
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	presidioapi "github.com/nucleuscloud/neosync/internal/ee/presidio"
-	ee_transformer_fns "github.com/nucleuscloud/neosync/internal/ee/transformers/functions"
-	"github.com/nucleuscloud/neosync/internal/javascript"
-	javascript_userland "github.com/nucleuscloud/neosync/internal/javascript/userland"
-	"github.com/nucleuscloud/neosync/worker/pkg/benthos/transformers"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	presidioapi "github.com/Jeppzify/neosync/internal/ee/presidio"
+	ee_transformer_fns "github.com/Jeppzify/neosync/internal/ee/transformers/functions"
+	"github.com/Jeppzify/neosync/internal/javascript"
+	javascript_userland "github.com/Jeppzify/neosync/internal/javascript/userland"
+	"github.com/Jeppzify/neosync/worker/pkg/benthos/transformers"
 )
 
 type TransformerExecutor struct {

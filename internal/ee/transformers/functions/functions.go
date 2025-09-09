@@ -6,10 +6,10 @@ import (
 	"log/slog"
 	"strings"
 
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	presidioapi "github.com/nucleuscloud/neosync/internal/ee/presidio"
-	"github.com/nucleuscloud/neosync/internal/queue"
-	transformer_utils "github.com/nucleuscloud/neosync/worker/pkg/benthos/transformers/utils"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	presidioapi "github.com/Jeppzify/neosync/internal/ee/presidio"
+	"github.com/Jeppzify/neosync/internal/queue"
+	transformer_utils "github.com/Jeppzify/neosync/worker/pkg/benthos/transformers/utils"
 )
 
 var (

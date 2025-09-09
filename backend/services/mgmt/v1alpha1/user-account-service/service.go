@@ -1,14 +1,14 @@
 package v1alpha1_useraccountservice
 
 import (
-	auth_client "github.com/nucleuscloud/neosync/backend/internal/auth/client"
-	"github.com/nucleuscloud/neosync/backend/internal/userdata"
-	"github.com/nucleuscloud/neosync/internal/authmgmt"
-	"github.com/nucleuscloud/neosync/internal/billing"
-	"github.com/nucleuscloud/neosync/internal/ee/license"
-	"github.com/nucleuscloud/neosync/internal/ee/rbac"
-	"github.com/nucleuscloud/neosync/internal/neosyncdb"
-	"github.com/nucleuscloud/neosync/internal/temporal/clientmanager"
+	auth_client "github.com/Jeppzify/neosync/backend/internal/auth/client"
+	"github.com/Jeppzify/neosync/backend/internal/userdata"
+	"github.com/Jeppzify/neosync/internal/authmgmt"
+	"github.com/Jeppzify/neosync/internal/billing"
+	"github.com/Jeppzify/neosync/internal/ee/license"
+	"github.com/Jeppzify/neosync/internal/ee/rbac"
+	"github.com/Jeppzify/neosync/internal/neosyncdb"
+	"github.com/Jeppzify/neosync/internal/temporal/clientmanager"
 )
 
 type Service struct {

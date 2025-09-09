@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"sort"
 
-	sqlmanager_shared "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/shared"
+	sqlmanager_shared "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/shared"
 )
 
 func BuildOrderedForeignKeyConstraintsToDrop(

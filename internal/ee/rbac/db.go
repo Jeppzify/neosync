@@ -3,8 +3,8 @@ package rbac
 import (
 	"context"
 
-	db_queries "github.com/nucleuscloud/neosync/backend/gen/go/db"
-	"github.com/nucleuscloud/neosync/internal/neosyncdb"
+	db_queries "github.com/Jeppzify/neosync/backend/gen/go/db"
+	"github.com/Jeppzify/neosync/internal/neosyncdb"
 )
 
 type RbacDb struct {

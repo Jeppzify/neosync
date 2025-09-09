@@ -7,14 +7,14 @@ import (
 	"log/slog"
 
 	"connectrpc.com/connect"
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	"github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
-	sql_manager "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager"
-	connectionmanager "github.com/nucleuscloud/neosync/internal/connection-manager"
-	"github.com/nucleuscloud/neosync/internal/ee/license"
-	schemamanager "github.com/nucleuscloud/neosync/internal/schema-manager"
-	schemamanager_shared "github.com/nucleuscloud/neosync/internal/schema-manager/shared"
-	"github.com/nucleuscloud/neosync/worker/pkg/workflows/datasync/activities/shared"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	"github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1/mgmtv1alpha1connect"
+	sql_manager "github.com/Jeppzify/neosync/backend/pkg/sqlmanager"
+	connectionmanager "github.com/Jeppzify/neosync/internal/connection-manager"
+	"github.com/Jeppzify/neosync/internal/ee/license"
+	schemamanager "github.com/Jeppzify/neosync/internal/schema-manager"
+	schemamanager_shared "github.com/Jeppzify/neosync/internal/schema-manager/shared"
+	"github.com/Jeppzify/neosync/worker/pkg/workflows/datasync/activities/shared"
 )
 
 type initStatementBuilder struct {

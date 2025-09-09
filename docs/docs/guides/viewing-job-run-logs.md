@@ -16,7 +16,7 @@ This section details the variety of ways that job run logs can be accessed depen
 ## Neosync Cloud
 
 Job Run Logs can only be accessed through the UI.
-Navigate to [Neosync Cloud](https://app.neosync.dev), then click on the Runs tab in the top nav.
+Navigate to [Neosync Cloud](https://github.com/Jeppzify/neosync), then click on the Runs tab in the top nav.
 
 Select the run you wish to see logs for. Select the run.
 

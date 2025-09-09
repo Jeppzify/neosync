@@ -3,15 +3,15 @@ package genbenthosconfigs_activity
 import (
 	"testing"
 
-	mgmtv1alpha1 "github.com/nucleuscloud/neosync/backend/gen/go/protos/mgmt/v1alpha1"
-	sqlmanager_mssql "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/mssql"
-	sqlmanager_postgres "github.com/nucleuscloud/neosync/backend/pkg/sqlmanager/postgres"
-	benthosbuilder "github.com/nucleuscloud/neosync/internal/benthos/benthos-builder"
-	runconfigs "github.com/nucleuscloud/neosync/internal/runconfigs"
-	"github.com/nucleuscloud/neosync/worker/pkg/workflows/datasync/activities/shared"
+	mgmtv1alpha1 "github.com/Jeppzify/neosync/backend/gen/go/protos/mgmt/v1alpha1"
+	sqlmanager_mssql "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/mssql"
+	sqlmanager_postgres "github.com/Jeppzify/neosync/backend/pkg/sqlmanager/postgres"
+	benthosbuilder "github.com/Jeppzify/neosync/internal/benthos/benthos-builder"
+	runconfigs "github.com/Jeppzify/neosync/internal/runconfigs"
+	"github.com/Jeppzify/neosync/worker/pkg/workflows/datasync/activities/shared"
 	"github.com/stretchr/testify/require"
 
-	neosync_benthos "github.com/nucleuscloud/neosync/worker/pkg/benthos"
+	neosync_benthos "github.com/Jeppzify/neosync/worker/pkg/benthos"
 )
 
 func Test_buildPostTableSyncRunCtx(t *testing.T) {

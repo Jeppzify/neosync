@@ -2,19 +2,19 @@ openapi: 3.1.0
 info:
   summary: Neosync API
   version: "0.5"
-  termsOfService: "https://www.neosync.dev/terms-of-service"
+  termsOfService: "https://example.com/terms-of-service"
   contact:
     name: Neosync Support
-    email: support@neosync.dev
+    email: support@example.com
   license:
     name: MIT
-    url: https://github.com/nucleuscloud/neosync/blob/main/LICENSE.md
+    url: https://github.com/Jeppzify/neosync/blob/main/LICENSE.md
   title: mgmt.v1alpha1
 externalDocs:
   description: API and SDK Documentation
-  url: https://docs.neosync.dev/api
+  url: https://docs.example.com/api
 servers:
-  - url: https://neosync-api.svcs.neosync.dev
+  - url: https://neosync-api.svcs.example.com
     description: Neosync Cloud
   - url: http://localhost:{port}
     description: Development
@@ -317,7 +317,7 @@ components:
              Measured in seconds
         retryPolicy:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.RetryPolicy'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.RetryPolicy"
           title: retry_policy
           description: |-
             Optionally define a retry policy for the activity
@@ -358,7 +358,7 @@ components:
         schemas:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.AiGenerateSourceSchemaOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.AiGenerateSourceSchemaOption"
           title: schemas
           minItems: 1
           description: The list of schemas (and their tables) along with any configuration options that will be used to generate data for.
@@ -398,7 +398,7 @@ components:
         tables:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.AiGenerateSourceTableOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.AiGenerateSourceTableOption"
           title: tables
           minItems: 1
           description: The list of tables (and their configuration) that reside within the schema to receive generated data
@@ -443,7 +443,7 @@ components:
       properties:
         storageClass:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AwsS3DestinationConnectionOptions.StorageClass'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AwsS3DestinationConnectionOptions.StorageClass"
           title: storage_class
           description: The storage class that will be used when objects are written to S3
         maxInFlight:
@@ -457,7 +457,7 @@ components:
           description: The maximum period (duration string) to wait on an upload before abandoning it and reattempting.
         batch:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.BatchConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.BatchConfig"
           title: batch
           description: Configure batching options to more efficiently store records in S3
       title: AwsS3DestinationConnectionOptions
@@ -540,11 +540,11 @@ components:
           items:
             type: string
           title: errors
-          description: '@deprecated - Use error_reports instead'
+          description: "@deprecated - Use error_reports instead"
         errorReports:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.ColumnError.ColumnErrorReport'
+            $ref: "#/components/schemas/mgmt.v1alpha1.ColumnError.ColumnErrorReport"
           title: error_reports
           description: The list of error reports
       title: ColumnError
@@ -554,7 +554,7 @@ components:
       properties:
         code:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ColumnError.ColumnErrorCode'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ColumnError.ColumnErrorCode"
           title: code
           description: The error code
         message:
@@ -584,11 +584,11 @@ components:
           items:
             type: string
           title: warnings
-          description: '@deprecated - Use warning_reports instead'
+          description: "@deprecated - Use warning_reports instead"
         warningReports:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.ColumnWarning.ColumnWarningReport'
+            $ref: "#/components/schemas/mgmt.v1alpha1.ColumnWarning.ColumnWarningReport"
           title: warning_reports
           description: The list of warning reports
       title: ColumnWarning
@@ -598,7 +598,7 @@ components:
       properties:
         code:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ColumnWarning.ColumnWarningCode'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ColumnWarning.ColumnWarningCode"
           title: code
           description: The warning code
         message:
@@ -618,7 +618,7 @@ components:
           description: The connection id to use for the job destination
         options:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobDestinationOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobDestinationOptions"
           title: options
           description: The destination options to use for the job destination
       title: CreateJobDestination
@@ -634,7 +634,7 @@ components:
         destinations:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.CreateJobDestination'
+            $ref: "#/components/schemas/mgmt.v1alpha1.CreateJobDestination"
           title: destinations
           minItems: 1
           description: The list of destinations to create and associate with the job
@@ -645,7 +645,7 @@ components:
       properties:
         job:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Job'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Job"
           title: job
           description: The job that was updated
       title: CreateJobDestinationConnectionsResponse
@@ -659,7 +659,7 @@ components:
           description: The unique identifier of the job
         hook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.NewJobHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.NewJobHook"
           title: hook
           description: The new hook configuration
       title: CreateJobHookRequest
@@ -669,7 +669,7 @@ components:
       properties:
         hook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobHook"
           title: hook
           description: The newly created hook
       title: CreateJobHookResponse
@@ -709,18 +709,18 @@ components:
         mappings:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobMapping'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobMapping"
           title: mappings
           description: The list of mappings that will be used to transform the data
         source:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobSource'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobSource"
           title: source
           description: The source connection configuration
         destinations:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.CreateJobDestination'
+            $ref: "#/components/schemas/mgmt.v1alpha1.CreateJobDestination"
           title: destinations
           description: The list of destinations that will be used to store the data
         initiateJobRun:
@@ -729,12 +729,12 @@ components:
           description: Initially trigger a run of this job regardless of its status or cron schedule
         workflowOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.WorkflowOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.WorkflowOptions"
           title: workflow_options
           description: Specify timeouts and other workflow options for the underlying temporal workflow
         syncOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ActivityOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ActivityOptions"
           title: sync_options
           description: |-
             Specify timeout and retry options for data synchronization activities
@@ -743,12 +743,12 @@ components:
         virtualForeignKeys:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.VirtualForeignConstraint'
+            $ref: "#/components/schemas/mgmt.v1alpha1.VirtualForeignConstraint"
           title: virtual_foreign_keys
           description: The list of virtual foreign keys that will be used to further constrain the data ontop of the database defined constraints
         jobType:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig"
           title: job_type
           description: The type of job to create
       title: CreateJobRequest
@@ -769,7 +769,7 @@ components:
       properties:
         job:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Job'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Job"
           title: job
           description: The job that was created
       title: CreateJobResponse
@@ -816,7 +816,7 @@ components:
         schema:
           type: string
           title: schema
-          description: 'The database schema. Ex: public'
+          description: "The database schema. Ex: public"
         table:
           type: string
           title: table
@@ -857,11 +857,11 @@ components:
           items:
             type: string
           title: errors
-          description: '@deprecated - Use error_reports instead'
+          description: "@deprecated - Use error_reports instead"
         errorReports:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.DatabaseError.DatabaseErrorReport'
+            $ref: "#/components/schemas/mgmt.v1alpha1.DatabaseError.DatabaseErrorReport"
           title: error_reports
           description: The list of error reports
       title: DatabaseError
@@ -871,7 +871,7 @@ components:
       properties:
         code:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.DatabaseError.DatabaseErrorCode'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.DatabaseError.DatabaseErrorCode"
           title: code
           description: The error code
         message:
@@ -947,7 +947,7 @@ components:
         tableMappings:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.DynamoDBDestinationTableMapping'
+            $ref: "#/components/schemas/mgmt.v1alpha1.DynamoDBDestinationTableMapping"
           title: table_mappings
           description: List of table mappings when piping data from a dynamoDB table to another dynamoDB table
       title: DynamoDBDestinationConnectionOptions
@@ -978,14 +978,14 @@ components:
         tables:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.DynamoDBSourceTableOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.DynamoDBSourceTableOption"
           title: tables
           description: |-
             List of table option configurations for any mapped source table.
              Any table listed in this must also be present as a job mapping table to be applied.
         unmappedTransforms:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.DynamoDBSourceUnmappedTransformConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.DynamoDBSourceUnmappedTransformConfig"
           title: unmapped_transforms
           description: Default transformations for any unmapped keys
         enableConsistentRead:
@@ -1004,7 +1004,7 @@ components:
         tables:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.DynamoDBSourceTableOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.DynamoDBSourceTableOption"
           title: tables
           description: The list of tables (and their configuration) that reside within the schema
       title: DynamoDBSourceSchemaSubset
@@ -1045,22 +1045,22 @@ components:
       properties:
         b:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobMappingTransformer'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobMappingTransformer"
           title: b
           description: Byte
         boolean:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobMappingTransformer'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobMappingTransformer"
           title: boolean
           description: Boolean
         n:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobMappingTransformer'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobMappingTransformer"
           title: n
           description: Number
         s:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobMappingTransformer'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobMappingTransformer"
           title: s
           description: String
       title: DynamoDBSourceUnmappedTransformConfig
@@ -1212,7 +1212,7 @@ components:
       properties:
         emailType:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateEmailType'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateEmailType"
           title: email_type
           description: Optionally specify the type of email to generate. The types specified determine the contents on the left side of the @.
       title: GenerateEmail
@@ -1377,7 +1377,7 @@ components:
       properties:
         ipType:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateIpAddressType'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateIpAddressType"
           title: ip_type
           description: Optionally specify the type of ip address to generate.
       title: GenerateIpAddress
@@ -1424,7 +1424,7 @@ components:
         schemas:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.GenerateSourceSchemaOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.GenerateSourceSchemaOption"
           title: schemas
           minItems: 1
           description: The list of schemas (and their tables) along with any configuration options that will be used to generate data for.
@@ -1446,7 +1446,7 @@ components:
         tables:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.GenerateSourceTableOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.GenerateSourceTableOption"
           title: tables
           minItems: 1
           description: The list of tables (and their configuration) that reside within the schema to receive generated data
@@ -1616,7 +1616,7 @@ components:
           description: The unique identifier of the job
         timing:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GetActiveJobHooksByTimingRequest.Timing'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GetActiveJobHooksByTimingRequest.Timing"
           title: timing
           description: The timing desired.
       title: GetActiveJobHooksByTimingRequest
@@ -1627,7 +1627,7 @@ components:
         hooks:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobHook'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobHook"
           title: hooks
           description: The active job hooks
       title: GetActiveJobHooksByTimingResponse
@@ -1647,7 +1647,7 @@ components:
       properties:
         hook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobHook"
           title: hook
           description: The found hook
       title: GetJobHookResponse
@@ -1668,7 +1668,7 @@ components:
         hooks:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobHook'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobHook"
           title: hooks
           description: The list of hooks found attached to the job
       title: GetJobHooksResponse
@@ -1688,7 +1688,7 @@ components:
       properties:
         nextRuns:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobNextRuns'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobNextRuns"
           title: next_runs
           description: The list of next run times
       title: GetJobNextRunsResponse
@@ -1709,7 +1709,7 @@ components:
         recentRuns:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobRecentRun'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobRecentRun"
           title: recent_runs
           description: The list of recent job runs
       title: GetJobRecentRunsResponse
@@ -1729,7 +1729,7 @@ components:
       properties:
         job:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Job'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Job"
           title: job
           description: The job that was retrieved
       title: GetJobResponse
@@ -1754,7 +1754,7 @@ components:
         events:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobRunEvent'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobRunEvent"
           title: events
           description: The list of events
         isRunComplete:
@@ -1792,7 +1792,7 @@ components:
           description: The unique identifier of the account
         window:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.LogWindow'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.LogWindow"
           title: window
           description: The time window in which to retrieve the logs
         maxLogLines:
@@ -1806,7 +1806,7 @@ components:
         logLevels:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.LogLevel'
+            $ref: "#/components/schemas/mgmt.v1alpha1.LogLevel"
           title: log_levels
           description: Provide a list of log levels to filter by. If any of these are UNSPECIFIED, all log levels are returned.
       title: GetJobRunLogsRequest
@@ -1817,7 +1817,7 @@ components:
         logLines:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRunLogsResponse.LogLine'
+            $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRunLogsResponse.LogLine"
           title: log_lines
           description: The list of log lines
       title: GetJobRunLogsResponse
@@ -1846,7 +1846,7 @@ components:
           description: The log line
         timestamp:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: timestamp
           description: The timestamp of the log line
         labels:
@@ -1898,13 +1898,13 @@ components:
           description: The unique identifier of the account
         window:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.LogWindow'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.LogWindow"
           title: window
           description: The time window in which to retrieve the logs
         shouldTail:
           type: boolean
           title: should_tail
-          description: 'Whether or not to tail the stream. Note: only works with k8s-pods and is not currently supported with Loki logs'
+          description: "Whether or not to tail the stream. Note: only works with k8s-pods and is not currently supported with Loki logs"
         maxLogLines:
           type:
             - integer
@@ -1916,7 +1916,7 @@ components:
         logLevels:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.LogLevel'
+            $ref: "#/components/schemas/mgmt.v1alpha1.LogLevel"
           title: log_levels
           description: Provide a list of log levels to filter by. If any of these are UNSPECIFIED, all log levels are returned.
       title: GetJobRunLogsStreamRequest
@@ -1945,7 +1945,7 @@ components:
           description: The log line
         timestamp:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: timestamp
           description: The timestamp of the log line
         labels:
@@ -1987,7 +1987,7 @@ components:
       properties:
         jobRun:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobRun'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobRun"
           title: job_run
           description: The job run that was retrieved
       title: GetJobRunResponse
@@ -2036,7 +2036,7 @@ components:
         jobRuns:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobRun'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobRun"
           title: job_runs
           description: The list of job runs
       title: GetJobRunsResponse
@@ -2056,7 +2056,7 @@ components:
       properties:
         status:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobStatus'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobStatus"
           title: status
           description: The status of the job
       title: GetJobStatusResponse
@@ -2077,7 +2077,7 @@ components:
         statuses:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobStatusRecord'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobStatusRecord"
           title: statuses
           description: The list of job statuses
       title: GetJobStatusesResponse
@@ -2098,7 +2098,7 @@ components:
         jobs:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.Job'
+            $ref: "#/components/schemas/mgmt.v1alpha1.Job"
           title: jobs
           description: The list of jobs
       title: GetJobsResponse
@@ -2123,7 +2123,7 @@ components:
       properties:
         report:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiDetectionReport'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiDetectionReport"
           title: report
           description: The pii detection report
       title: GetPiiDetectionReportResponse
@@ -2133,7 +2133,7 @@ components:
       properties:
         id:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.RunContextKey'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.RunContextKey"
           title: id
           description: The run context key
       title: GetRunContextRequest
@@ -2221,14 +2221,14 @@ components:
           title: created_by_user_id
         createdAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: created_at
         updatedByUserId:
           type: string
           title: updated_by_user_id
         updatedAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: updated_at
         name:
           type: string
@@ -2236,19 +2236,19 @@ components:
           description: The unique, friendly name of the job
         source:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobSource'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobSource"
           title: source
           description: The source connection configuration
         destinations:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobDestination'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobDestination"
           title: destinations
           description: The list of destinations that will be used to store the data
         mappings:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobMapping'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobMapping"
           title: mappings
           description: The list of mappings that will be used to transform the data
         cronSchedule:
@@ -2261,7 +2261,7 @@ components:
           description: The account identifier that a job is associated with
         syncOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ActivityOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ActivityOptions"
           title: sync_options
           description: |-
             Specify timeout and retry options for data synchronization activities
@@ -2269,18 +2269,18 @@ components:
              For the data sync and generate jobs, this will be applied per table
         workflowOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.WorkflowOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.WorkflowOptions"
           title: workflow_options
           description: Specify timeouts and other workflow options for the underlying temporal workflow
         virtualForeignKeys:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.VirtualForeignConstraint'
+            $ref: "#/components/schemas/mgmt.v1alpha1.VirtualForeignConstraint"
           title: virtual_foreign_keys
           description: Any virtual foreign keys that are configured as a part of this job
         jobType:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig"
           title: job_type
           description: The type of job
       title: Job
@@ -2295,7 +2295,7 @@ components:
           description: The connection id to use for the job destination
         options:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobDestinationOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobDestinationOptions"
           title: options
           description: The destination options to use for the job destination
         id:
@@ -2372,33 +2372,33 @@ components:
       properties:
         postgresOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresDestinationConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresDestinationConnectionOptions"
           title: postgres_options
         awsS3Options:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AwsS3DestinationConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AwsS3DestinationConnectionOptions"
           title: aws_s3_options
         mysqlOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlDestinationConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlDestinationConnectionOptions"
           title: mysql_options
         mongodbOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MongoDBDestinationConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MongoDBDestinationConnectionOptions"
           title: mongodb_options
         gcpCloudstorageOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GcpCloudStorageDestinationConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GcpCloudStorageDestinationConnectionOptions"
           title: gcp_cloudstorage_options
           description: Destination Connecton options for Google Cloud Storage
         dynamodbOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.DynamoDBDestinationConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.DynamoDBDestinationConnectionOptions"
           title: dynamodb_options
           description: Destination Connection options for DynamoDB
         mssqlOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlDestinationConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlDestinationConnectionOptions"
           title: mssql_options
           description: Destination Connection options for Microsoft SQL Server
       title: JobDestinationOptions
@@ -2424,7 +2424,7 @@ components:
           description: The unique identifier of the job this hook belongs to.
         config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobHookConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobHookConfig"
           title: config
           description: Hook-type specific configuration.
         createdByUserId:
@@ -2433,7 +2433,7 @@ components:
           description: The user that created this hook.
         createdAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: created_at
           description: The time this hook was created.
         updatedByUserId:
@@ -2442,7 +2442,7 @@ components:
           description: The user that last updated this hook.
         updatedAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: updated_at
           description: The last time this hook was updated.
         enabled:
@@ -2478,7 +2478,7 @@ components:
       properties:
         sql:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobHookConfig.JobSqlHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobHookConfig.JobSqlHook"
           title: sql
           description: Configuration for SQL-specific hooks.
       title: JobHookConfig
@@ -2499,7 +2499,7 @@ components:
           description: Unique identifier of the Neosync connection to run this hook for. Must be a connection id that is present in the job.
         timing:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobHookConfig.JobSqlHook.Timing'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobHookConfig.JobSqlHook.Timing"
           title: timing
           description: The timing of when the hook will run
       title: JobSqlHook
@@ -2533,7 +2533,7 @@ components:
       properties:
         preSync:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobHookTimingPreSync'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobHookTimingPreSync"
           title: pre_sync
           description: |-
             A Pre-Sync timing.
@@ -2542,7 +2542,7 @@ components:
              Will run before Schema Init, if enabled.
         postSync:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobHookTimingPostSync'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobHookTimingPostSync"
           title: post_sync
           description: A Post-Sync timing. Will run after the last table sync.
       title: Timing
@@ -2580,7 +2580,7 @@ components:
           description: The column in the configured schema.table
         transformer:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobMappingTransformer'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobMappingTransformer"
           title: transformer
           description: The transformer configuration that will be applied to each cell in the column
       title: JobMapping
@@ -2590,7 +2590,7 @@ components:
       properties:
         config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformerConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformerConfig"
           title: config
           description: The transformer configuration
       title: JobMappingTransformer
@@ -2601,7 +2601,7 @@ components:
         nextRunTimes:
           type: array
           items:
-            $ref: '#/components/schemas/google.protobuf.Timestamp'
+            $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: next_run_times
           description: The list of next run times
       title: JobNextRuns
@@ -2611,7 +2611,7 @@ components:
       properties:
         startTime:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: start_time
           description: The start time of the job run
         jobRunId:
@@ -2652,23 +2652,23 @@ components:
           description: The name of the job run.
         status:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobRunStatus'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobRunStatus"
           title: status
           description: the status of the job run
         startedAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: started_at
           description: A timestamp of when the run started
         completedAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: completed_at
           description: Available if the run completed or has not yet been archived by the system
         pendingActivities:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.PendingActivity'
+            $ref: "#/components/schemas/mgmt.v1alpha1.PendingActivity"
           title: pending_activities
           description: Pending activities are only returned when retrieving a specific job run and will not be returned when requesting job runs in list format
       title: JobRun
@@ -2689,23 +2689,23 @@ components:
           description: The type of the event
         startTime:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: start_time
           description: The start time of the event
         closeTime:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: close_time
           description: The close time of the event
         metadata:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobRunEventMetadata'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobRunEventMetadata"
           title: metadata
           description: The metadata of the event
         tasks:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobRunEventTask'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobRunEventTask"
           title: tasks
           description: The list of tasks associated with the event
       title: JobRunEvent
@@ -2730,7 +2730,7 @@ components:
       properties:
         syncMetadata:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobRunSyncMetadata'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobRunSyncMetadata"
           title: sync_metadata
           description: The metadata of the sync
       title: JobRunEventMetadata
@@ -2751,12 +2751,12 @@ components:
           description: The type of the task
         eventTime:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: event_time
           description: The time of the event
         error:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobRunEventTaskError'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobRunEventTaskError"
           title: error
           description: The error of the task
       title: JobRunEventTask
@@ -2792,7 +2792,7 @@ components:
       properties:
         options:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobSourceOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobSourceOptions"
           title: options
           description: The source options to use for the job
       title: JobSource
@@ -2875,35 +2875,35 @@ components:
       properties:
         postgres:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions"
           title: postgres
         awsS3:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AwsS3SourceConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AwsS3SourceConnectionOptions"
           title: aws_s3
         mysql:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions"
           title: mysql
         generate:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateSourceOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateSourceOptions"
           title: generate
         aiGenerate:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AiGenerateSourceOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AiGenerateSourceOptions"
           title: ai_generate
         mongodb:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MongoDBSourceConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MongoDBSourceConnectionOptions"
           title: mongodb
         dynamodb:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.DynamoDBSourceConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.DynamoDBSourceConnectionOptions"
           title: dynamodb
         mssql:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions"
           title: mssql
       title: JobSourceOptions
       additionalProperties: false
@@ -2951,22 +2951,22 @@ components:
       properties:
         postgresSubset:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceSchemaSubset'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceSchemaSubset"
           title: postgres_subset
           description: The list of schemas (and their tables) along with any configuration options that will be used.
         mysqlSubset:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceSchemaSubset'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceSchemaSubset"
           title: mysql_subset
           description: The list of schemas (and their tables) along with any configuration options that will be used.
         dynamodbSubset:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.DynamoDBSourceSchemaSubset'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.DynamoDBSourceSchemaSubset"
           title: dynamodb_subset
           description: The list of tables (and their configuration) that reside within the schema
         mssqlSubset:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSourceSchemaSubset'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSourceSchemaSubset"
           title: mssql_subset
           description: The list of schemas (and their tables) along with any configuration options that will be used.
       title: JobSourceSqlSubetSchemas
@@ -2981,7 +2981,7 @@ components:
           description: The unique identifier of the job
         status:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobStatus'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobStatus"
           title: status
           description: The status of the job
       title: JobStatusRecord
@@ -3014,12 +3014,12 @@ components:
       properties:
         sync:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypeSync'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypeSync"
           title: sync
           description: This is the default if no job type is specified
         piiDetect:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect"
           title: pii_detect
       title: JobTypeConfig
       additionalProperties: false
@@ -3044,12 +3044,12 @@ components:
       properties:
         dataSampling:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.DataSampling'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.DataSampling"
           title: data_sampling
           description: The configuration for data sampling
         tableScanFilter:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.TableScanFilter'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.TableScanFilter"
           title: table_scan_filter
           description: The configuration for filtering tables to scan
         userPrompt:
@@ -3058,7 +3058,7 @@ components:
           description: The user prompt to use for PII detection to help influence the LLM
         incremental:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.Incremental'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.Incremental"
           title: incremental
           description: The configuration for incremental PII detection
       title: JobTypePiiDetect
@@ -3116,7 +3116,7 @@ components:
         tables:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.TableIdentifier'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.TableIdentifier"
           title: tables
           description: Match specific tables within schemas
       title: TablePatterns
@@ -3158,17 +3158,17 @@ components:
       properties:
         includeAll:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.IncludeAll'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.IncludeAll"
           title: include_all
           description: Include all tables (default behavior)
         include:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.TablePatterns'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.TablePatterns"
           title: include
           description: Only include specified tables/schemas
         exclude:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.TablePatterns'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig.JobTypePiiDetect.TablePatterns"
           title: exclude
           description: Include all except specified tables/schemas
       title: TableScanFilter
@@ -3214,7 +3214,7 @@ components:
       properties:
         truncateTable:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlTruncateTableConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlTruncateTableConfig"
           title: truncate_table
           description: Whether to truncate the table before inserting data
         initTableSchema:
@@ -3223,7 +3223,7 @@ components:
           description: Whether to initialize the table schema before inserting data
         onConflict:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlOnConflictConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlOnConflictConfig"
           title: on_conflict
           description: The configuration for handling conflicts when inserting data
         skipForeignKeyViolations:
@@ -3232,7 +3232,7 @@ components:
           description: Insert all valid records, skipping any that violate foreign key constraints.
         batch:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.BatchConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.BatchConfig"
           title: batch
           description: Configure batching options to handle how much data is sent to your database at once.
         maxInFlight:
@@ -3263,7 +3263,7 @@ components:
         schemas:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSourceSchemaOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSourceSchemaOption"
           title: schemas
           description: The list of schemas (and their tables) along with any configuration options that will be used.
         connectionId:
@@ -3277,12 +3277,12 @@ components:
           description: Whether to subset the table by foreign key constraints
         columnRemovalStrategy:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.ColumnRemovalStrategy'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.ColumnRemovalStrategy"
           title: column_removal_strategy
           description: Provide a strategy of what to do in the event Neosync encounters a column that is removed from the source table.
         newColumnAdditionStrategy:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.NewColumnAdditionStrategy'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.NewColumnAdditionStrategy"
           title: new_column_addition_strategy
           description: Provide a strategy of what to do in the event Neosync encounters an unmapped column for the job's mapped tables.
       title: MssqlSourceConnectionOptions
@@ -3315,12 +3315,12 @@ components:
       properties:
         haltJob:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.ColumnRemovalStrategy.HaltJob'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.ColumnRemovalStrategy.HaltJob"
           title: halt_job
           description: halt job if a column is removed
         continueJob:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.ColumnRemovalStrategy.ContinueJob'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.ColumnRemovalStrategy.ContinueJob"
           title: continue_job
           description: continue job if a column is removed
       title: ColumnRemovalStrategy
@@ -3363,12 +3363,12 @@ components:
       properties:
         haltJob:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.NewColumnAdditionStrategy.HaltJob'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.NewColumnAdditionStrategy.HaltJob"
           title: halt_job
           description: halt job if a new column is detected.
         passthrough:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.NewColumnAdditionStrategy.Passthrough'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSourceConnectionOptions.NewColumnAdditionStrategy.Passthrough"
           title: passthrough
           description: pass the new column through as is.
       title: NewColumnAdditionStrategy
@@ -3394,7 +3394,7 @@ components:
         tables:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSourceTableOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSourceTableOption"
           title: tables
           minItems: 1
           description: The list of tables (and their configuration) that reside within the schema
@@ -3406,7 +3406,7 @@ components:
         mssqlSchemas:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.MssqlSourceSchemaOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.MssqlSourceSchemaOption"
           title: mssql_schemas
           description: The list of schemas (and their tables) along with any configuration options that will be used.
       title: MssqlSourceSchemaSubset
@@ -3471,7 +3471,7 @@ components:
       properties:
         truncateTable:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlTruncateTableConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlTruncateTableConfig"
           title: truncate_table
           description: Whether to truncate the table before inserting data
         initTableSchema:
@@ -3480,7 +3480,7 @@ components:
           description: Whether to initialize the table schema before inserting data
         onConflict:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlOnConflictConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlOnConflictConfig"
           title: on_conflict
           description: The configuration for handling conflicts when inserting data
         skipForeignKeyViolations:
@@ -3489,7 +3489,7 @@ components:
           description: Insert all valid records, skipping any that violate foreign key constraints.
         batch:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.BatchConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.BatchConfig"
           title: batch
           description: Configure batching options to handle how much data is sent to your database at once.
         maxInFlight:
@@ -3528,15 +3528,15 @@ components:
         doNothing:
           type: boolean
           title: do_nothing
-          description: '@deprecated - Use strategy nothing instead'
+          description: "@deprecated - Use strategy nothing instead"
         nothing:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlOnConflictConfig.MysqlOnConflictDoNothing'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlOnConflictConfig.MysqlOnConflictDoNothing"
           title: nothing
           description: Do nothing when a conflict occurs
         update:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlOnConflictConfig.MysqlOnConflictUpdate'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlOnConflictConfig.MysqlOnConflictUpdate"
           title: update
           description: Update columns when a conflict occurs
       title: MysqlOnConflictConfig
@@ -3565,7 +3565,7 @@ components:
         schemas:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceSchemaOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceSchemaOption"
           title: schemas
           description: The list of schemas (and their tables) along with any configuration options that will be used.
         connectionId:
@@ -3579,12 +3579,12 @@ components:
           description: Whether to subset the table by foreign key constraints
         columnRemovalStrategy:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.ColumnRemovalStrategy'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.ColumnRemovalStrategy"
           title: column_removal_strategy
           description: Provide a strategy of what to do in the event Neosync encounters a column that is removed from the source table.
         newColumnAdditionStrategy:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.NewColumnAdditionStrategy'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.NewColumnAdditionStrategy"
           title: new_column_addition_strategy
           description: Provide a strategy of what to do in the event Neosync encounters an unmapped column for the job's mapped tables.
       title: MysqlSourceConnectionOptions
@@ -3617,12 +3617,12 @@ components:
       properties:
         haltJob:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.ColumnRemovalStrategy.HaltJob'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.ColumnRemovalStrategy.HaltJob"
           title: halt_job
           description: halt job if a column is removed
         continueJob:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.ColumnRemovalStrategy.ContinueJob'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.ColumnRemovalStrategy.ContinueJob"
           title: continue_job
           description: continue job if a column is removed
       title: ColumnRemovalStrategy
@@ -3673,12 +3673,12 @@ components:
       properties:
         haltJob:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.NewColumnAdditionStrategy.HaltJob'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.NewColumnAdditionStrategy.HaltJob"
           title: halt_job
           description: halt job if a new column is detected.
         autoMap:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.NewColumnAdditionStrategy.AutoMap'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.NewColumnAdditionStrategy.AutoMap"
           title: auto_map
           description: |-
             automatically handle unmapped columns. It handles this by using the DBs default/nullable values.
@@ -3686,7 +3686,7 @@ components:
              If none of the criteria above can be met, the job run will fail to prevent leaking of PII.
         passthrough:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.NewColumnAdditionStrategy.Passthrough'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceConnectionOptions.NewColumnAdditionStrategy.Passthrough"
           title: passthrough
           description: pass the new column through as is.
       title: NewColumnAdditionStrategy
@@ -3717,7 +3717,7 @@ components:
         tables:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceTableOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceTableOption"
           title: tables
           minItems: 1
           description: The list of tables (and their configuration) that reside within the schema
@@ -3729,7 +3729,7 @@ components:
         mysqlSchemas:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.MysqlSourceSchemaOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.MysqlSourceSchemaOption"
           title: mysql_schemas
           description: The list of schemas (and their tables) along with any configuration options that will be used.
       title: MysqlSourceSchemaSubset
@@ -3789,7 +3789,7 @@ components:
           description: Description of what this hook does.
         config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobHookConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobHookConfig"
           title: config
           description: Hook-type specific configuration.
         enabled:
@@ -3851,7 +3851,7 @@ components:
       properties:
         job:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Job'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Job"
           title: job
           description: The job that was updated
       title: PauseJobResponse
@@ -3876,7 +3876,7 @@ components:
       properties:
         status:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ActivityStatus'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ActivityStatus"
           title: status
           description: The status of the activity
         activityName:
@@ -3885,7 +3885,7 @@ components:
           description: The name of the activity
         lastFailure:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ActivityFailure'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ActivityFailure"
           title: last_failure
           description: The last failure of the activity
       title: PendingActivity
@@ -3942,27 +3942,27 @@ components:
       properties:
         replace:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Replace'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Replace"
           title: replace
           description: Configures the anonymizer to replace the identified PII with a specific value
         redact:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Redact'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Redact"
           title: redact
           description: Configures the anonymizer to completely remove the identified PII
         mask:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Mask'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Mask"
           title: mask
           description: Configures the anonymizer to mask the identified PII
         hash:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Hash'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Hash"
           title: hash
           description: Configures the anonymizer to hash the identified PII
         transform:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Transform'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Transform"
           title: transform
           description: Configures the anonymizer to use a Neosync configured transformer
       title: PiiAnonymizer
@@ -3987,7 +3987,7 @@ components:
       properties:
         algo:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Hash.HashType'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer.Hash.HashType"
           title: algo
           description: The hashing algorithm to use.
       title: Hash
@@ -4057,7 +4057,7 @@ components:
         value:
           type: string
           title: value
-          description: 'The value to replace. If not provided, a template token of the anonymizer is used (e.g. A PERSON entity is replaced with: <PERSON>)'
+          description: "The value to replace. If not provided, a template token of the anonymizer is used (e.g. A PERSON entity is replaced with: <PERSON>)"
       title: Replace
       additionalProperties: false
     mgmt.v1alpha1.PiiAnonymizer.Transform:
@@ -4065,7 +4065,7 @@ components:
       properties:
         config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformerConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformerConfig"
           title: config
           description: The transformer to use. If not provided, a transformer will automatically be selected (if supported), otherwise it falls back to generating a random hash.
       title: Transform
@@ -4093,7 +4093,7 @@ components:
         tables:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.PiiDetectionReport.TableReport'
+            $ref: "#/components/schemas/mgmt.v1alpha1.PiiDetectionReport.TableReport"
           title: tables
           description: The report for each table where PII was detected. If no PII was detected, the table will not be included.
       title: PiiDetectionReport
@@ -4113,7 +4113,7 @@ components:
         columns:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.PiiDetectionReport.TableReport.ColumnReport'
+            $ref: "#/components/schemas/mgmt.v1alpha1.PiiDetectionReport.TableReport.ColumnReport"
           title: columns
           description: The report for each column
       title: TableReport
@@ -4143,12 +4143,12 @@ components:
           description: The name of the column
         regexReport:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiDetectionReport.TableReport.ColumnReport.Regex'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiDetectionReport.TableReport.ColumnReport.Regex"
           title: regex_report
           description: The regex report. Will be empty if no regex matched the column name.
         llmReport:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiDetectionReport.TableReport.ColumnReport.LLM'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiDetectionReport.TableReport.ColumnReport.LLM"
           title: llm_report
           description: The LLM report. Will be empty if the LLM determined the column name (and optionally the data) was not PII.
       title: ColumnReport
@@ -4199,7 +4199,7 @@ components:
       properties:
         truncateTable:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresTruncateTableConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresTruncateTableConfig"
           title: truncate_table
           description: Whether to truncate the table before inserting data
         initTableSchema:
@@ -4208,7 +4208,7 @@ components:
           description: Whether to initialize the table schema before inserting data
         onConflict:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresOnConflictConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresOnConflictConfig"
           title: on_conflict
           description: The configuration for handling conflicts when inserting data
         skipForeignKeyViolations:
@@ -4217,7 +4217,7 @@ components:
           description: Whether to skip records that violate foreign key constraints
         batch:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.BatchConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.BatchConfig"
           title: batch
           description: Configure batching options to handle how much data is sent to your database at once.
         maxInFlight:
@@ -4256,15 +4256,15 @@ components:
         doNothing:
           type: boolean
           title: do_nothing
-          description: '@deprecated - Use strategy nothing instead'
+          description: "@deprecated - Use strategy nothing instead"
         nothing:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresOnConflictConfig.PostgresOnConflictDoNothing'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresOnConflictConfig.PostgresOnConflictDoNothing"
           title: nothing
           description: Do nothing when a conflict occurs
         update:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresOnConflictConfig.PostgresOnConflictUpdate'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresOnConflictConfig.PostgresOnConflictUpdate"
           title: update
           description: Update columns when a conflict occurs
       title: PostgresOnConflictConfig
@@ -4287,7 +4287,7 @@ components:
         schemas:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceSchemaOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceSchemaOption"
           title: schemas
           description: The list of schemas (and their tables) along with any configuration options that will be used.
         connectionId:
@@ -4301,12 +4301,12 @@ components:
           description: Whether to subset the table by foreign key constraints
         newColumnAdditionStrategy:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.NewColumnAdditionStrategy'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.NewColumnAdditionStrategy"
           title: new_column_addition_strategy
           description: Provide a strategy of what to do in the event Neosync encounters an unmapped column for the job's mapped tables.
         columnRemovalStrategy:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.ColumnRemovalStrategy'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.ColumnRemovalStrategy"
           title: column_removal_strategy
           description: Provide a strategy of what to do in the event Neosync encounters a column that is removed from the source table.
       title: PostgresSourceConnectionOptions
@@ -4339,12 +4339,12 @@ components:
       properties:
         haltJob:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.ColumnRemovalStrategy.HaltJob'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.ColumnRemovalStrategy.HaltJob"
           title: halt_job
           description: halt job if a column is removed
         continueJob:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.ColumnRemovalStrategy.ContinueJob'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.ColumnRemovalStrategy.ContinueJob"
           title: continue_job
           description: continue job if a column is removed
       title: ColumnRemovalStrategy
@@ -4395,12 +4395,12 @@ components:
       properties:
         haltJob:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.NewColumnAdditionStrategy.HaltJob'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.NewColumnAdditionStrategy.HaltJob"
           title: halt_job
           description: halt job if a new column is detected.
         autoMap:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.NewColumnAdditionStrategy.AutoMap'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.NewColumnAdditionStrategy.AutoMap"
           title: auto_map
           description: |-
             automatically handle unmapped columns. It handles this by using the DBs default/nullable values.
@@ -4408,7 +4408,7 @@ components:
              If none of the criteria above can be met, the job run will fail to prevent leaking of PII.
         passthrough:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.NewColumnAdditionStrategy.Passthrough'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceConnectionOptions.NewColumnAdditionStrategy.Passthrough"
           title: passthrough
           description: pass the new column through as is.
       title: NewColumnAdditionStrategy
@@ -4439,7 +4439,7 @@ components:
         tables:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceTableOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceTableOption"
           title: tables
           minItems: 1
           description: The list of tables (and their configuration) that reside within the schema
@@ -4451,7 +4451,7 @@ components:
         postgresSchemas:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.PostgresSourceSchemaOption'
+            $ref: "#/components/schemas/mgmt.v1alpha1.PostgresSourceSchemaOption"
           title: postgres_schemas
           description: The list of schemas (and their tables) along with any configuration options that will be used.
       title: PostgresSourceSchemaSubset
@@ -4567,7 +4567,7 @@ components:
       properties:
         hook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobHook"
           title: hook
           description: The updated job hook
       title: SetJobHookEnabledResponse
@@ -4582,7 +4582,7 @@ components:
           description: The unique identifier of the job to update subsets for
         schemas:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobSourceSqlSubetSchemas'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobSourceSqlSubetSchemas"
           title: schemas
           description: The subset configuration
         subsetByForeignKeyConstraints:
@@ -4596,7 +4596,7 @@ components:
       properties:
         job:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Job'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Job"
           title: job
           description: The job that was updated
       title: SetJobSourceSqlConnectionSubsetsResponse
@@ -4611,7 +4611,7 @@ components:
           description: The unique identifier of the job
         syncOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ActivityOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ActivityOptions"
           title: sync_options
           description: The sync options object. The entire object must be provided and will fully overwrite the previous result
       title: SetJobSyncOptionsRequest
@@ -4621,7 +4621,7 @@ components:
       properties:
         job:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Job'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Job"
           title: job
           description: The updated job
       title: SetJobSyncOptionsResponse
@@ -4636,7 +4636,7 @@ components:
           description: The unique identifier of the job
         worfklowOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.WorkflowOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.WorkflowOptions"
           title: worfklow_options
           description: The workflow options object. The entire object must be provided and will fully overwrite the previous result
       title: SetJobWorkflowOptionsRequest
@@ -4646,7 +4646,7 @@ components:
       properties:
         job:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Job'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Job"
           title: job
           description: The updated job
       title: SetJobWorkflowOptionsResponse
@@ -4656,7 +4656,7 @@ components:
       properties:
         id:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.RunContextKey'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.RunContextKey"
           title: id
           description: The run context key
         value:
@@ -4675,7 +4675,7 @@ components:
       properties:
         id:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.RunContextKey'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.RunContextKey"
           title: id
           description: The run context key
         value:
@@ -4703,7 +4703,7 @@ components:
         errorReports:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.TableError.TableErrorReport'
+            $ref: "#/components/schemas/mgmt.v1alpha1.TableError.TableErrorReport"
           title: error_reports
           description: The list of error reports
       title: TableError
@@ -4713,7 +4713,7 @@ components:
       properties:
         code:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TableError.TableErrorCode'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TableError.TableErrorCode"
           title: code
           description: The error code
         message:
@@ -4837,12 +4837,12 @@ components:
           description: A lsit of email domains that should be excluded. This changes based on the preserve_domain flag. See the docs for more details.
         emailType:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateEmailType'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateEmailType"
           title: email_type
           description: Optionally specify the type of email to generate. The types specified determine the contents on the left side of the @.
         invalidEmailAction:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.InvalidEmailAction'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.InvalidEmailAction"
           title: invalid_email_action
           description: Optionally specify an action in the result of an invalid email. An invalid email is one that does not conform to RFC 5322.
       title: TransformEmail
@@ -5065,13 +5065,13 @@ components:
           description: Minimal detection score for determining PII. 0.0-1.0
         defaultAnonymizer:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer"
           title: default_anonymizer
           description: The default anonmyization config used for all instances of detected PII.
         denyRecognizers:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.PiiDenyRecognizer'
+            $ref: "#/components/schemas/mgmt.v1alpha1.PiiDenyRecognizer"
           title: deny_recognizers
           description: Configure deny lists where each word is treated as PII.
         allowedEntities:
@@ -5102,7 +5102,7 @@ components:
           title: entity_anonymizers
           additionalProperties:
             allOf:
-              - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer'
+              - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer"
             title: value
           description: |-
             A map of entity names to anonymizer configurations.
@@ -5120,7 +5120,7 @@ components:
           title: key
         value:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PiiAnonymizer'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PiiAnonymizer"
           title: value
       title: EntityAnonymizersEntry
       additionalProperties: false
@@ -5555,196 +5555,196 @@ components:
       properties:
         generateEmailConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateEmail'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateEmail"
           title: generate_email_config
         transformEmailConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformEmail'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformEmail"
           title: transform_email_config
         generateBoolConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateBool'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateBool"
           title: generate_bool_config
         generateCardNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateCardNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateCardNumber"
           title: generate_card_number_config
         generateCityConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateCity'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateCity"
           title: generate_city_config
         generateE164PhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateE164PhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateE164PhoneNumber"
           title: generate_e164_phone_number_config
         generateFirstNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateFirstName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateFirstName"
           title: generate_first_name_config
         generateFloat64Config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateFloat64'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateFloat64"
           title: generate_float64_config
         generateFullAddressConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateFullAddress'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateFullAddress"
           title: generate_full_address_config
         generateFullNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateFullName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateFullName"
           title: generate_full_name_config
         generateGenderConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateGender'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateGender"
           title: generate_gender_config
         generateInt64PhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateInt64PhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateInt64PhoneNumber"
           title: generate_int64_phone_number_config
         generateInt64Config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateInt64'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateInt64"
           title: generate_int64_config
         generateLastNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateLastName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateLastName"
           title: generate_last_name_config
         generateSha256hashConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateSha256Hash'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateSha256Hash"
           title: generate_sha256hash_config
         generateSsnConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateSSN'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateSSN"
           title: generate_ssn_config
         generateStateConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateState'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateState"
           title: generate_state_config
         generateStreetAddressConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateStreetAddress'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateStreetAddress"
           title: generate_street_address_config
         generateStringPhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateStringPhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateStringPhoneNumber"
           title: generate_string_phone_number_config
         generateStringConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateString'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateString"
           title: generate_string_config
         generateUnixtimestampConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateUnixTimestamp'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateUnixTimestamp"
           title: generate_unixtimestamp_config
         generateUsernameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateUsername'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateUsername"
           title: generate_username_config
         generateUtctimestampConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateUtcTimestamp'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateUtcTimestamp"
           title: generate_utctimestamp_config
         generateUuidConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateUuid'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateUuid"
           title: generate_uuid_config
         generateZipcodeConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateZipcode'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateZipcode"
           title: generate_zipcode_config
         transformE164PhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformE164PhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformE164PhoneNumber"
           title: transform_e164_phone_number_config
         transformFirstNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformFirstName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformFirstName"
           title: transform_first_name_config
         transformFloat64Config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformFloat64'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformFloat64"
           title: transform_float64_config
         transformFullNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformFullName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformFullName"
           title: transform_full_name_config
         transformInt64PhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformInt64PhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformInt64PhoneNumber"
           title: transform_int64_phone_number_config
         transformInt64Config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformInt64'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformInt64"
           title: transform_int64_config
         transformLastNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformLastName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformLastName"
           title: transform_last_name_config
         transformPhoneNumberConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformPhoneNumber'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformPhoneNumber"
           title: transform_phone_number_config
         transformStringConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformString'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformString"
           title: transform_string_config
         passthroughConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Passthrough'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Passthrough"
           title: passthrough_config
         nullconfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Null'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Null"
           title: nullconfig
         userDefinedTransformerConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.UserDefinedTransformerConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.UserDefinedTransformerConfig"
           title: user_defined_transformer_config
         generateDefaultConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateDefault'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateDefault"
           title: generate_default_config
         transformJavascriptConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformJavascript'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformJavascript"
           title: transform_javascript_config
         generateCategoricalConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateCategorical'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateCategorical"
           title: generate_categorical_config
         transformCharacterScrambleConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformCharacterScramble'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformCharacterScramble"
           title: transform_character_scramble_config
         generateJavascriptConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateJavascript'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateJavascript"
           title: generate_javascript_config
         generateCountryConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateCountry'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateCountry"
           title: generate_country_config
         transformPiiTextConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformPiiText'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformPiiText"
           title: transform_pii_text_config
           description: NeosyncCloud/Enterprise only transformer for anonymizing PII Text
         generateBusinessNameConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateBusinessName'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateBusinessName"
           title: generate_business_name_config
         generateIpAddressConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GenerateIpAddress'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GenerateIpAddress"
           title: generate_ip_address_config
         transformUuidConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformUuid'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformUuid"
           title: transform_uuid_config
         transformScrambleIdentityConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.TransformScrambleIdentity'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.TransformScrambleIdentity"
           title: transform_scramble_identity_config
           description: Scrambles an integer while keeping it unique.
       title: TransformerConfig
@@ -5765,7 +5765,7 @@ components:
           description: The unique identifier of the connection
         options:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobDestinationOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobDestinationOptions"
           title: options
           description: The destination connection options
         destinationId:
@@ -5779,7 +5779,7 @@ components:
       properties:
         job:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Job'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Job"
           title: job
           description: The job that was updated
       title: UpdateJobDestinationConnectionResponse
@@ -5804,7 +5804,7 @@ components:
           description: Description of what this hook does.
         config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobHookConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobHookConfig"
           title: config
           description: Hook-type specific configuration.
         enabled:
@@ -5825,7 +5825,7 @@ components:
       properties:
         hook:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobHook'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobHook"
           title: hook
           description: The updated job hook
       title: UpdateJobHookResponse
@@ -5864,7 +5864,7 @@ components:
       properties:
         job:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Job'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Job"
           title: job
           description: The job that was updated
       title: UpdateJobScheduleResponse
@@ -5879,24 +5879,24 @@ components:
           description: The unique identifier of the job
         source:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobSource'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobSource"
           title: source
           description: The new source connection configuration
         mappings:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobMapping'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobMapping"
           title: mappings
           description: The new list of mappings that will be used to transform the data
         virtualForeignKeys:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.VirtualForeignConstraint'
+            $ref: "#/components/schemas/mgmt.v1alpha1.VirtualForeignConstraint"
           title: virtual_foreign_keys
           description: The new list of virtual foreign keys that will be used to further constrain the data ontop of the database defined constraints
         jobType:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobTypeConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobTypeConfig"
           title: job_type
           description: The new job type configuration
       title: UpdateJobSourceConnectionRequest
@@ -5906,7 +5906,7 @@ components:
       properties:
         job:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Job'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Job"
           title: job
       title: UpdateJobSourceConnectionResponse
       additionalProperties: false
@@ -5946,7 +5946,7 @@ components:
         mappings:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobMapping'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobMapping"
           title: mappings
           description: The list of mappings to validate
         connectionId:
@@ -5957,12 +5957,12 @@ components:
         virtualForeignKeys:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.VirtualForeignConstraint'
+            $ref: "#/components/schemas/mgmt.v1alpha1.VirtualForeignConstraint"
           title: virtual_foreign_keys
           description: The list of virtual foreign keys
         jobSource:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.JobSource'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.JobSource"
           title: job_source
           description: The source options of the job
       title: ValidateJobMappingsRequest
@@ -5973,24 +5973,24 @@ components:
         columnErrors:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.ColumnError'
+            $ref: "#/components/schemas/mgmt.v1alpha1.ColumnError"
           title: column_errors
           description: The list of column errors
         databaseErrors:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.DatabaseError'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.DatabaseError"
           title: database_errors
           description: The list of database errors
         columnWarnings:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.ColumnWarning'
+            $ref: "#/components/schemas/mgmt.v1alpha1.ColumnWarning"
           title: column_warnings
           description: The list of column warnings
         tableErrors:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.TableError'
+            $ref: "#/components/schemas/mgmt.v1alpha1.TableError"
           title: table_errors
           description: The list of table errors
       title: ValidateJobMappingsResponse
@@ -6001,7 +6001,7 @@ components:
         mappings:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.JobMapping'
+            $ref: "#/components/schemas/mgmt.v1alpha1.JobMapping"
           title: mappings
           description: The list of mappings to validate
         connectionId:
@@ -6017,19 +6017,19 @@ components:
         missingColumns:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.DatabaseColumn'
+            $ref: "#/components/schemas/mgmt.v1alpha1.DatabaseColumn"
           title: missing_columns
           description: The list columns missing in destination
         extraColumns:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.DatabaseColumn'
+            $ref: "#/components/schemas/mgmt.v1alpha1.DatabaseColumn"
           title: extra_columns
           description: The list of extra columns in destination and not in source
         missingTables:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.ValidateSchemaResponse.Table'
+            $ref: "#/components/schemas/mgmt.v1alpha1.ValidateSchemaResponse.Table"
           title: missing_tables
           description: The list of tables missing in destination
         missingSchemas:
@@ -6072,7 +6072,7 @@ components:
           description: The list of columns
         foreignKey:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.VirtualForeignKey'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.VirtualForeignKey"
           title: foreign_key
           description: The foreign key
       title: VirtualForeignConstraint
@@ -6167,10 +6167,10 @@ components:
           type: string
           description: A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
         detail:
-          $ref: '#/components/schemas/google.protobuf.Any'
+          $ref: "#/components/schemas/google.protobuf.Any"
       title: Connect Error
       additionalProperties: true
-      description: 'Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation'
+      description: "Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation"
     google.protobuf.Any:
       type: object
       properties:
@@ -6199,16 +6199,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobsRequest"
         required: true
       responses:
         default:
@@ -6216,13 +6216,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobsResponse"
   /mgmt.v1alpha1.JobService/GetJob:
     post:
       tags:
@@ -6235,16 +6235,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRequest"
         required: true
       responses:
         default:
@@ -6252,13 +6252,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobResponse"
   /mgmt.v1alpha1.JobService/CreateJob:
     post:
       tags:
@@ -6271,16 +6271,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CreateJobRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CreateJobRequest"
         required: true
       responses:
         default:
@@ -6288,13 +6288,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CreateJobResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CreateJobResponse"
   /mgmt.v1alpha1.JobService/DeleteJob:
     post:
       tags:
@@ -6307,16 +6307,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.DeleteJobRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.DeleteJobRequest"
         required: true
       responses:
         default:
@@ -6324,13 +6324,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.DeleteJobResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.DeleteJobResponse"
   /mgmt.v1alpha1.JobService/IsJobNameAvailable:
     post:
       tags:
@@ -6343,16 +6343,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.IsJobNameAvailableRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.IsJobNameAvailableRequest"
         required: true
       responses:
         default:
@@ -6360,13 +6360,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.IsJobNameAvailableResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.IsJobNameAvailableResponse"
   /mgmt.v1alpha1.JobService/UpdateJobSchedule:
     post:
       tags:
@@ -6379,16 +6379,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.UpdateJobScheduleRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.UpdateJobScheduleRequest"
         required: true
       responses:
         default:
@@ -6396,13 +6396,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.UpdateJobScheduleResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.UpdateJobScheduleResponse"
   /mgmt.v1alpha1.JobService/UpdateJobSourceConnection:
     post:
       tags:
@@ -6415,16 +6415,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.UpdateJobSourceConnectionRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.UpdateJobSourceConnectionRequest"
         required: true
       responses:
         default:
@@ -6432,13 +6432,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.UpdateJobSourceConnectionResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.UpdateJobSourceConnectionResponse"
   /mgmt.v1alpha1.JobService/SetJobSourceSqlConnectionSubsets:
     post:
       tags:
@@ -6451,16 +6451,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.SetJobSourceSqlConnectionSubsetsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.SetJobSourceSqlConnectionSubsetsRequest"
         required: true
       responses:
         default:
@@ -6468,13 +6468,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.SetJobSourceSqlConnectionSubsetsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.SetJobSourceSqlConnectionSubsetsResponse"
   /mgmt.v1alpha1.JobService/UpdateJobDestinationConnection:
     post:
       tags:
@@ -6487,16 +6487,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.UpdateJobDestinationConnectionRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.UpdateJobDestinationConnectionRequest"
         required: true
       responses:
         default:
@@ -6504,13 +6504,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.UpdateJobDestinationConnectionResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.UpdateJobDestinationConnectionResponse"
   /mgmt.v1alpha1.JobService/DeleteJobDestinationConnection:
     post:
       tags:
@@ -6523,16 +6523,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.DeleteJobDestinationConnectionRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.DeleteJobDestinationConnectionRequest"
         required: true
       responses:
         default:
@@ -6540,13 +6540,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.DeleteJobDestinationConnectionResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.DeleteJobDestinationConnectionResponse"
   /mgmt.v1alpha1.JobService/CreateJobDestinationConnections:
     post:
       tags:
@@ -6559,16 +6559,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CreateJobDestinationConnectionsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CreateJobDestinationConnectionsRequest"
         required: true
       responses:
         default:
@@ -6576,13 +6576,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CreateJobDestinationConnectionsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CreateJobDestinationConnectionsResponse"
   /mgmt.v1alpha1.JobService/PauseJob:
     post:
       tags:
@@ -6595,16 +6595,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.PauseJobRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.PauseJobRequest"
         required: true
       responses:
         default:
@@ -6612,13 +6612,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.PauseJobResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.PauseJobResponse"
   /mgmt.v1alpha1.JobService/GetJobRecentRuns:
     post:
       tags:
@@ -6631,16 +6631,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRecentRunsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRecentRunsRequest"
         required: true
       responses:
         default:
@@ -6648,13 +6648,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRecentRunsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRecentRunsResponse"
   /mgmt.v1alpha1.JobService/GetJobNextRuns:
     post:
       tags:
@@ -6667,16 +6667,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobNextRunsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobNextRunsRequest"
         required: true
       responses:
         default:
@@ -6684,13 +6684,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobNextRunsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobNextRunsResponse"
   /mgmt.v1alpha1.JobService/GetJobStatus:
     post:
       tags:
@@ -6703,16 +6703,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobStatusRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobStatusRequest"
         required: true
       responses:
         default:
@@ -6720,13 +6720,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobStatusResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobStatusResponse"
   /mgmt.v1alpha1.JobService/GetJobStatuses:
     post:
       tags:
@@ -6739,16 +6739,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobStatusesRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobStatusesRequest"
         required: true
       responses:
         default:
@@ -6756,13 +6756,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobStatusesResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobStatusesResponse"
   /mgmt.v1alpha1.JobService/GetJobRuns:
     post:
       tags:
@@ -6775,16 +6775,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRunsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRunsRequest"
         required: true
       responses:
         default:
@@ -6792,13 +6792,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRunsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRunsResponse"
   /mgmt.v1alpha1.JobService/GetJobRunEvents:
     post:
       tags:
@@ -6811,16 +6811,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRunEventsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRunEventsRequest"
         required: true
       responses:
         default:
@@ -6828,13 +6828,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRunEventsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRunEventsResponse"
   /mgmt.v1alpha1.JobService/GetJobRun:
     post:
       tags:
@@ -6847,16 +6847,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRunRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRunRequest"
         required: true
       responses:
         default:
@@ -6864,13 +6864,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRunResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRunResponse"
   /mgmt.v1alpha1.JobService/DeleteJobRun:
     post:
       tags:
@@ -6883,16 +6883,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.DeleteJobRunRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.DeleteJobRunRequest"
         required: true
       responses:
         default:
@@ -6900,13 +6900,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.DeleteJobRunResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.DeleteJobRunResponse"
   /mgmt.v1alpha1.JobService/CreateJobRun:
     post:
       tags:
@@ -6919,16 +6919,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CreateJobRunRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CreateJobRunRequest"
         required: true
       responses:
         default:
@@ -6936,13 +6936,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CreateJobRunResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CreateJobRunResponse"
   /mgmt.v1alpha1.JobService/CancelJobRun:
     post:
       tags:
@@ -6955,16 +6955,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CancelJobRunRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CancelJobRunRequest"
         required: true
       responses:
         default:
@@ -6972,13 +6972,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CancelJobRunResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CancelJobRunResponse"
   /mgmt.v1alpha1.JobService/TerminateJobRun:
     post:
       tags:
@@ -6991,16 +6991,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.TerminateJobRunRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.TerminateJobRunRequest"
         required: true
       responses:
         default:
@@ -7008,13 +7008,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.TerminateJobRunResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.TerminateJobRunResponse"
   /mgmt.v1alpha1.JobService/GetJobRunLogsStream: {}
   /mgmt.v1alpha1.JobService/GetJobRunLogs:
     post:
@@ -7030,16 +7030,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRunLogsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRunLogsRequest"
         required: true
       responses:
         default:
@@ -7047,13 +7047,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobRunLogsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobRunLogsResponse"
   /mgmt.v1alpha1.JobService/SetJobWorkflowOptions:
     post:
       tags:
@@ -7066,16 +7066,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.SetJobWorkflowOptionsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.SetJobWorkflowOptionsRequest"
         required: true
       responses:
         default:
@@ -7083,13 +7083,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.SetJobWorkflowOptionsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.SetJobWorkflowOptionsResponse"
   /mgmt.v1alpha1.JobService/SetJobSyncOptions:
     post:
       tags:
@@ -7102,16 +7102,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.SetJobSyncOptionsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.SetJobSyncOptionsRequest"
         required: true
       responses:
         default:
@@ -7119,13 +7119,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.SetJobSyncOptionsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.SetJobSyncOptionsResponse"
   /mgmt.v1alpha1.JobService/ValidateJobMappings:
     post:
       tags:
@@ -7138,16 +7138,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.ValidateJobMappingsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.ValidateJobMappingsRequest"
         required: true
       responses:
         default:
@@ -7155,13 +7155,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.ValidateJobMappingsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.ValidateJobMappingsResponse"
   /mgmt.v1alpha1.JobService/ValidateSchema:
     post:
       tags:
@@ -7174,16 +7174,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.ValidateSchemaRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.ValidateSchemaRequest"
         required: true
       responses:
         default:
@@ -7191,13 +7191,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.ValidateSchemaResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.ValidateSchemaResponse"
   /mgmt.v1alpha1.JobService/GetRunContext:
     post:
       tags:
@@ -7210,16 +7210,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetRunContextRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetRunContextRequest"
         required: true
       responses:
         default:
@@ -7227,13 +7227,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetRunContextResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetRunContextResponse"
   /mgmt.v1alpha1.JobService/SetRunContext:
     post:
       tags:
@@ -7246,16 +7246,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.SetRunContextRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.SetRunContextRequest"
         required: true
       responses:
         default:
@@ -7263,13 +7263,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.SetRunContextResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.SetRunContextResponse"
   /mgmt.v1alpha1.JobService/SetRunContexts: {}
   /mgmt.v1alpha1.JobService/GetJobHooks:
     post:
@@ -7283,16 +7283,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobHooksRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobHooksRequest"
         required: true
       responses:
         default:
@@ -7300,13 +7300,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobHooksResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobHooksResponse"
   /mgmt.v1alpha1.JobService/GetJobHook:
     post:
       tags:
@@ -7319,16 +7319,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetJobHookRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetJobHookRequest"
         required: true
       responses:
         default:
@@ -7336,13 +7336,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetJobHookResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetJobHookResponse"
   /mgmt.v1alpha1.JobService/CreateJobHook:
     post:
       tags:
@@ -7355,16 +7355,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CreateJobHookRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CreateJobHookRequest"
         required: true
       responses:
         default:
@@ -7372,13 +7372,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CreateJobHookResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CreateJobHookResponse"
   /mgmt.v1alpha1.JobService/DeleteJobHook:
     post:
       tags:
@@ -7391,16 +7391,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.DeleteJobHookRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.DeleteJobHookRequest"
         required: true
       responses:
         default:
@@ -7408,13 +7408,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.DeleteJobHookResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.DeleteJobHookResponse"
   /mgmt.v1alpha1.JobService/IsJobHookNameAvailable:
     post:
       tags:
@@ -7427,16 +7427,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.IsJobHookNameAvailableRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.IsJobHookNameAvailableRequest"
         required: true
       responses:
         default:
@@ -7444,13 +7444,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.IsJobHookNameAvailableResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.IsJobHookNameAvailableResponse"
   /mgmt.v1alpha1.JobService/UpdateJobHook:
     post:
       tags:
@@ -7463,16 +7463,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.UpdateJobHookRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.UpdateJobHookRequest"
         required: true
       responses:
         default:
@@ -7480,13 +7480,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.UpdateJobHookResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.UpdateJobHookResponse"
   /mgmt.v1alpha1.JobService/SetJobHookEnabled:
     post:
       tags:
@@ -7499,16 +7499,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.SetJobHookEnabledRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.SetJobHookEnabledRequest"
         required: true
       responses:
         default:
@@ -7516,13 +7516,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.SetJobHookEnabledResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.SetJobHookEnabledResponse"
   /mgmt.v1alpha1.JobService/GetActiveJobHooksByTiming:
     post:
       tags:
@@ -7535,16 +7535,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetActiveJobHooksByTimingRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetActiveJobHooksByTimingRequest"
         required: true
       responses:
         default:
@@ -7552,13 +7552,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetActiveJobHooksByTimingResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetActiveJobHooksByTimingResponse"
   /mgmt.v1alpha1.JobService/GetPiiDetectionReport:
     post:
       tags:
@@ -7570,16 +7570,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetPiiDetectionReportRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetPiiDetectionReportRequest"
         required: true
       responses:
         default:
@@ -7587,13 +7587,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetPiiDetectionReportResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetPiiDetectionReportResponse"
 tags:
   - name: mgmt.v1alpha1.JobService
     description: Service that handles jobs, runs, and hooks

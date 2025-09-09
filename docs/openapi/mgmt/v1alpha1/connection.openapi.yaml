@@ -5,16 +5,16 @@ info:
   termsOfService: "https://example.com/terms-of-service"
   contact:
     name: Neosync Support
-    email: support@neosync.dev
+    email: support@example.com
   license:
     name: MIT
     url: https://github.com/Jeppzify/neosync/blob/main/LICENSE.md
   title: mgmt.v1alpha1
 externalDocs:
   description: API and SDK Documentation
-  url: https://docs.neosync.dev/api
+  url: https://docs.example.com/api
 servers:
-  - url: https://neosync-api.svcs.neosync.dev
+  - url: https://neosync-api.svcs.example.com
     description: Neosync Cloud
   - url: http://localhost:{port}
     description: Development
@@ -155,7 +155,7 @@ components:
           description: The bucket path prefix that will be appended to each file
         credentials:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AwsS3Credentials'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AwsS3Credentials"
           title: credentials
           description: The credentials to use for the S3 bucket
         region:
@@ -298,7 +298,7 @@ components:
         privileges:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.ConnectionRolePrivilege'
+            $ref: "#/components/schemas/mgmt.v1alpha1.ConnectionRolePrivilege"
           title: privileges
           description: The privileges the role has to the connection
       title: CheckConnectionConfigByIdResponse
@@ -308,7 +308,7 @@ components:
       properties:
         connectionConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ConnectionConfig"
           title: connection_config
           description: The connection configuration to validate
       title: CheckConnectionConfigRequest
@@ -342,7 +342,7 @@ components:
         privileges:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.ConnectionRolePrivilege'
+            $ref: "#/components/schemas/mgmt.v1alpha1.ConnectionRolePrivilege"
           title: privileges
       title: CheckConnectionConfigResponse
       additionalProperties: false
@@ -361,7 +361,7 @@ components:
       properties:
         result:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionResult'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionResult"
           title: result
           description: The result of the SSH connection check
       title: CheckSSHConnectionByIdResponse
@@ -371,7 +371,7 @@ components:
       properties:
         tunnel:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.SSHTunnel'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.SSHTunnel"
           title: tunnel
           description: The SSH tunnel configuration to use for the connection
       title: CheckSSHConnectionRequest
@@ -381,7 +381,7 @@ components:
       properties:
         result:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionResult'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionResult"
           title: result
           description: The result of the SSH connection check
       title: CheckSSHConnectionResponse
@@ -523,7 +523,7 @@ components:
           description: The unique, friendly name of the connection
         connectionConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ConnectionConfig"
           title: connection_config
           description: Contains the connection configuration and connection type
         createdByUserId:
@@ -532,7 +532,7 @@ components:
           description: The user id of the user that created the connection
         createdAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: created_at
           description: When the connection was created
         updatedByUserId:
@@ -541,7 +541,7 @@ components:
           description: Who last updated the connection
         updatedAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: updated_at
           description: When the connection was last updated
         accountId:
@@ -634,47 +634,47 @@ components:
       properties:
         pgConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresConnectionConfig"
           title: pg_config
           description: Configures a PostgreSQL connection
         awsS3Config:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AwsS3ConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AwsS3ConnectionConfig"
           title: aws_s3_config
           description: Configures an AWS S3 Connection
         mysqlConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlConnectionConfig"
           title: mysql_config
           description: Configures a MySQL connection
         localDirConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.LocalDirectoryConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.LocalDirectoryConnectionConfig"
           title: local_dir_config
           description: Configures a connection to a directory available on the local file system
         openaiConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.OpenAiConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.OpenAiConnectionConfig"
           title: openai_config
           description: Connection config for an OpenAI (or compatible) Connection
         mongoConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MongoConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MongoConnectionConfig"
           title: mongo_config
           description: Configures a MongoDB Connection
         gcpCloudstorageConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.GcpCloudStorageConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.GcpCloudStorageConnectionConfig"
           title: gcp_cloudstorage_config
           description: Configures a GCP Cloud Storage Connection
         dynamodbConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.DynamoDBConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.DynamoDBConnectionConfig"
           title: dynamodb_config
           description: Configures a DynamoDB Connection
         mssqlConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MssqlConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MssqlConnectionConfig"
           title: mssql_config
           description: Configures a Microsoft SQL Server (mssql) Connection
       title: ConnectionConfig
@@ -690,7 +690,7 @@ components:
         schema:
           type: string
           title: schema
-          description: 'The database schema. Ex: public'
+          description: "The database schema. Ex: public"
         table:
           type: string
           title: table
@@ -718,7 +718,7 @@ components:
           description: The friendly name of the connection
         connectionConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ConnectionConfig"
           title: connection_config
           description: The connection configuration to use for the connection
       title: CreateConnectionRequest
@@ -728,7 +728,7 @@ components:
       properties:
         connection:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Connection'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Connection"
           title: connection
           description: The created connection
       title: CreateConnectionResponse
@@ -774,7 +774,7 @@ components:
       properties:
         credentials:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AwsS3Credentials'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AwsS3Credentials"
           title: credentials
           description: |-
             Optional credentials that may be provided and will be used to connect to the DynamoDB Instance.
@@ -846,7 +846,7 @@ components:
       properties:
         connection:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Connection'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Connection"
           title: connection
           description: The connection
       title: GetConnectionResponse
@@ -874,7 +874,7 @@ components:
         connections:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.Connection'
+            $ref: "#/components/schemas/mgmt.v1alpha1.Connection"
           title: connections
           description: The connections
       title: GetConnectionsResponse
@@ -938,12 +938,12 @@ components:
           description: The full mongo connection url
         tunnel:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.SSHTunnel'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.SSHTunnel"
           title: tunnel
           description: Provide tunnel configuration that can be used to access a connection that is not publicly accessible to the internet
         clientTls:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ClientTlsConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ClientTlsConfig"
           title: client_tls
           description: Provide client-side TLS Certificates
       title: MongoConnectionConfig
@@ -987,17 +987,17 @@ components:
              The key is the name of the environment variable to source. It must contain a prefix of "USER_DEFINED_"
         connectionOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.SqlConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.SqlConnectionOptions"
           title: connection_options
           description: Provide connection options that can be used to further fine-tune the connection
         tunnel:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.SSHTunnel'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.SSHTunnel"
           title: tunnel
           description: Provide tunnel configuration that can be used to access a postgres connection that is not publicly accessible to the internet
         clientTls:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ClientTlsConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ClientTlsConfig"
           title: client_tls
           description: Provide client-side TLS Certificates
       title: MssqlConnectionConfig
@@ -1073,7 +1073,7 @@ components:
           description: A raw string url that will be used to construct the connection. DSN format. URI format also supported but more limited.
         connection:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.MysqlConnection'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.MysqlConnection"
           title: connection
           description: A structured representation of the connection that will be used to construct the url
         urlFromEnv:
@@ -1085,17 +1085,17 @@ components:
              The key is the name of the environment variable to source. It must contain a prefix of "USER_DEFINED_"
         tunnel:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.SSHTunnel'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.SSHTunnel"
           title: tunnel
           description: Provide tunnel configuration that can be used to access a postgres connection that is not publicly accessible to the internet
         connectionOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.SqlConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.SqlConnectionOptions"
           title: connection_options
           description: Provide connection options that can be used to further fine-tune the connection
         clientTls:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ClientTlsConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ClientTlsConfig"
           title: client_tls
           description: Provide client-side TLS Certificates
       title: MysqlConnectionConfig
@@ -1199,7 +1199,7 @@ components:
           description: A raw string url that will be used to construct the connection. Must be URI format.
         connection:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.PostgresConnection'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.PostgresConnection"
           title: connection
           description: A structured representation of the connection that will be used to construct the url
         urlFromEnv:
@@ -1211,17 +1211,17 @@ components:
              The key is the name of the environment variable to source. It must contain a prefix of "USER_DEFINED_"
         tunnel:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.SSHTunnel'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.SSHTunnel"
           title: tunnel
           description: Provide tunnel configuration that can be used to access a postgres connection that is not publicly accessible to the internet
         connectionOptions:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.SqlConnectionOptions'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.SqlConnectionOptions"
           title: connection_options
           description: Provide connection options that can be used to further fine-tune the connection
         clientTls:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ClientTlsConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ClientTlsConfig"
           title: client_tls
           description: Provide client-side TLS Certificates
       title: PostgresConnectionConfig
@@ -1254,12 +1254,12 @@ components:
       properties:
         passphrase:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.SSHPassphrase'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.SSHPassphrase"
           title: passphrase
           description: Password authentication
         privateKey:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.SSHPrivateKey'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.SSHPrivateKey"
           title: private_key
           description: Private key authentication
       title: SSHAuthentication
@@ -1349,7 +1349,7 @@ components:
              This is not recommended for production use!
         authentication:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.SSHAuthentication'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.SSHAuthentication"
           title: authentication
           description: Provide the authentication required to successfully connect to the SSH server for tunneling
       title: SSHTunnel
@@ -1435,7 +1435,7 @@ components:
           description: The friendly name of the connection
         connectionConfig:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.ConnectionConfig'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.ConnectionConfig"
           title: connection_config
           description: The connection configuration to use for the connection
       title: UpdateConnectionRequest
@@ -1445,7 +1445,7 @@ components:
       properties:
         connection:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.Connection'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.Connection"
           title: connection
           description: The updated connection
       title: UpdateConnectionResponse
@@ -1489,10 +1489,10 @@ components:
           type: string
           description: A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
         detail:
-          $ref: '#/components/schemas/google.protobuf.Any'
+          $ref: "#/components/schemas/google.protobuf.Any"
       title: Connect Error
       additionalProperties: true
-      description: 'Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation'
+      description: "Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation"
     google.protobuf.Any:
       type: object
       properties:
@@ -1521,16 +1521,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionsRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionsRequest"
         required: true
       responses:
         default:
@@ -1538,13 +1538,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionsResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionsResponse"
   /mgmt.v1alpha1.ConnectionService/GetConnection:
     post:
       tags:
@@ -1557,16 +1557,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionRequest"
         required: true
       responses:
         default:
@@ -1574,13 +1574,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetConnectionResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetConnectionResponse"
   /mgmt.v1alpha1.ConnectionService/CreateConnection:
     post:
       tags:
@@ -1593,16 +1593,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CreateConnectionRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CreateConnectionRequest"
         required: true
       responses:
         default:
@@ -1610,13 +1610,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CreateConnectionResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CreateConnectionResponse"
   /mgmt.v1alpha1.ConnectionService/UpdateConnection:
     post:
       tags:
@@ -1629,16 +1629,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.UpdateConnectionRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.UpdateConnectionRequest"
         required: true
       responses:
         default:
@@ -1646,13 +1646,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.UpdateConnectionResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.UpdateConnectionResponse"
   /mgmt.v1alpha1.ConnectionService/DeleteConnection:
     post:
       tags:
@@ -1665,16 +1665,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.DeleteConnectionRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.DeleteConnectionRequest"
         required: true
       responses:
         default:
@@ -1682,13 +1682,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.DeleteConnectionResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.DeleteConnectionResponse"
   /mgmt.v1alpha1.ConnectionService/IsConnectionNameAvailable:
     post:
       tags:
@@ -1701,16 +1701,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.IsConnectionNameAvailableRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.IsConnectionNameAvailableRequest"
         required: true
       responses:
         default:
@@ -1718,13 +1718,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.IsConnectionNameAvailableResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.IsConnectionNameAvailableResponse"
   /mgmt.v1alpha1.ConnectionService/CheckConnectionConfig:
     post:
       tags:
@@ -1739,16 +1739,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CheckConnectionConfigRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CheckConnectionConfigRequest"
         required: true
       responses:
         default:
@@ -1756,13 +1756,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CheckConnectionConfigResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CheckConnectionConfigResponse"
   /mgmt.v1alpha1.ConnectionService/CheckConnectionConfigById:
     post:
       tags:
@@ -1777,16 +1777,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CheckConnectionConfigByIdRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CheckConnectionConfigByIdRequest"
         required: true
       responses:
         default:
@@ -1794,13 +1794,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CheckConnectionConfigByIdResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CheckConnectionConfigByIdResponse"
   /mgmt.v1alpha1.ConnectionService/CheckSqlQuery:
     post:
       tags:
@@ -1815,16 +1815,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CheckSqlQueryRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CheckSqlQueryRequest"
         required: true
       responses:
         default:
@@ -1832,13 +1832,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CheckSqlQueryResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CheckSqlQueryResponse"
   /mgmt.v1alpha1.ConnectionService/CheckSSHConnection:
     post:
       tags:
@@ -1851,16 +1851,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionRequest"
         required: true
       responses:
         default:
@@ -1868,13 +1868,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionResponse"
   /mgmt.v1alpha1.ConnectionService/CheckSSHConnectionById:
     post:
       tags:
@@ -1887,16 +1887,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionByIdRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionByIdRequest"
         required: true
       responses:
         default:
@@ -1904,13 +1904,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionByIdResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CheckSSHConnectionByIdResponse"
 tags:
   - name: mgmt.v1alpha1.ConnectionService
     description: |-

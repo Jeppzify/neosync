@@ -50,7 +50,7 @@ The **Connection Details** section, under the **Connection String** sub-header, 
 
 ## Setting up Neosync
 
-Let's get started with Neosync. First, sign up for a [Neosync account](https://app.neosync.dev).
+Let's get started with Neosync. First, sign up for a [Neosync account](https://github.com/Jeppzify/neosync).
 
 Sign in with an email/password or Google OAuth. Once you're logged in, you'll be directed to the **Jobs** page.
 

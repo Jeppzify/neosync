@@ -26,7 +26,7 @@ from neosync.mgmt.v1alpha1 import (
 GetAccessTokenFn = Callable[[], Union[str, None]]
 
 # Default gRPC URL for Neosync Cloud API
-_DEFAULT_NEOSYNC_CLOUD_API_URL = "neosync-api.svcs.neosync.dev:443"
+_DEFAULT_NEOSYNC_CLOUD_API_URL = "api.example.com:443"
 
 
 class Neosync:
@@ -40,7 +40,7 @@ class Neosync:
         access_token (Optional[str]): A static bearer token for API authentication.
             Mutually exclusive with get_access_token.
         api_url (Optional[str]): The URL of the Neosync API endpoint.
-            Defaults to "neosync-api.svcs.neosync.dev:443".
+            Defaults to "api.example.com:443".
         get_access_token (Optional[GetAccessTokenFn]): A callback function that returns
             a bearer token for API authentication. Mutually exclusive with access_token.
         insecure (Optional[bool]): If True, creates an insecure channel without TLS.

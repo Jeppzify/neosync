@@ -5,16 +5,16 @@ info:
   termsOfService: "https://example.com/terms-of-service"
   contact:
     name: Neosync Support
-    email: support@neosync.dev
+    email: support@example.com
   license:
     name: MIT
     url: https://github.com/Jeppzify/neosync/blob/main/LICENSE.md
   title: mgmt.v1alpha1
 externalDocs:
   description: API and SDK Documentation
-  url: https://docs.neosync.dev/api
+  url: https://docs.example.com/api
 servers:
-  - url: https://neosync-api.svcs.neosync.dev
+  - url: https://neosync-api.svcs.example.com
     description: Neosync Cloud
   - url: http://localhost:{port}
     description: Development
@@ -153,7 +153,7 @@ components:
           description: The unique identifier of the user that created the API key
         createdAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: created_at
           description: The timestamp of when the API key was created
         updatedById:
@@ -162,7 +162,7 @@ components:
           description: The unique identifier of the user that last updated the API key
         updatedAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: updated_at
           description: The timestamp of when the API key was last updated
         keyValue:
@@ -175,7 +175,7 @@ components:
           description: The unique identifier of the user that the API key belongs to (Each API Key is associated with its own user record to identify what the API key does in the system)
         expiresAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: expires_at
           description: The timestamp of what the API key expires and will not longer be usable.
       title: AccountApiKey
@@ -195,9 +195,9 @@ components:
           description: The friendly name of the API key
         expiresAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: expires_at
-          description: 'Validate between now and one year: now < x < 365 days'
+          description: "Validate between now and one year: now < x < 365 days"
       title: CreateAccountApiKeyRequest
       required:
         - expiresAt
@@ -207,7 +207,7 @@ components:
       properties:
         apiKey:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountApiKey'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountApiKey"
           title: api_key
           description: The created API key
       title: CreateAccountApiKeyResponse
@@ -241,7 +241,7 @@ components:
       properties:
         apiKey:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountApiKey'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountApiKey"
           title: api_key
           description: The API key that was retrieved.
       title: GetAccountApiKeyResponse
@@ -262,7 +262,7 @@ components:
         apiKeys:
           type: array
           items:
-            $ref: '#/components/schemas/mgmt.v1alpha1.AccountApiKey'
+            $ref: "#/components/schemas/mgmt.v1alpha1.AccountApiKey"
           title: api_keys
           description: The list of API keys for the account.
       title: GetAccountApiKeysResponse
@@ -277,9 +277,9 @@ components:
           description: The unique identifier of the API key to regenerate.
         expiresAt:
           allOf:
-            - $ref: '#/components/schemas/google.protobuf.Timestamp'
+            - $ref: "#/components/schemas/google.protobuf.Timestamp"
           title: expires_at
-          description: 'Validate between now and one year: now < x < 365 days'
+          description: "Validate between now and one year: now < x < 365 days"
       title: RegenerateAccountApiKeyRequest
       required:
         - expiresAt
@@ -289,7 +289,7 @@ components:
       properties:
         apiKey:
           allOf:
-            - $ref: '#/components/schemas/mgmt.v1alpha1.AccountApiKey'
+            - $ref: "#/components/schemas/mgmt.v1alpha1.AccountApiKey"
           title: api_key
           description: The regenerated API key
       title: RegenerateAccountApiKeyResponse
@@ -333,10 +333,10 @@ components:
           type: string
           description: A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
         detail:
-          $ref: '#/components/schemas/google.protobuf.Any'
+          $ref: "#/components/schemas/google.protobuf.Any"
       title: Connect Error
       additionalProperties: true
-      description: 'Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation'
+      description: "Error type returned by Connect: https://connectrpc.com/docs/go/errors/#http-representation"
     google.protobuf.Any:
       type: object
       properties:
@@ -365,16 +365,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetAccountApiKeysRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetAccountApiKeysRequest"
         required: true
       responses:
         default:
@@ -382,13 +382,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetAccountApiKeysResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetAccountApiKeysResponse"
   /mgmt.v1alpha1.ApiKeyService/GetAccountApiKey:
     post:
       tags:
@@ -401,16 +401,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.GetAccountApiKeyRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.GetAccountApiKeyRequest"
         required: true
       responses:
         default:
@@ -418,13 +418,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.GetAccountApiKeyResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.GetAccountApiKeyResponse"
   /mgmt.v1alpha1.ApiKeyService/CreateAccountApiKey:
     post:
       tags:
@@ -439,16 +439,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.CreateAccountApiKeyRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.CreateAccountApiKeyRequest"
         required: true
       responses:
         default:
@@ -456,13 +456,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.CreateAccountApiKeyResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.CreateAccountApiKeyResponse"
   /mgmt.v1alpha1.ApiKeyService/RegenerateAccountApiKey:
     post:
       tags:
@@ -477,16 +477,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.RegenerateAccountApiKeyRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.RegenerateAccountApiKeyRequest"
         required: true
       responses:
         default:
@@ -494,13 +494,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.RegenerateAccountApiKeyResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.RegenerateAccountApiKeyResponse"
   /mgmt.v1alpha1.ApiKeyService/DeleteAccountApiKey:
     post:
       tags:
@@ -513,16 +513,16 @@ paths:
           in: header
           required: true
           schema:
-            $ref: '#/components/schemas/connect-protocol-version'
+            $ref: "#/components/schemas/connect-protocol-version"
         - name: Connect-Timeout-Ms
           in: header
           schema:
-            $ref: '#/components/schemas/connect-timeout-header'
+            $ref: "#/components/schemas/connect-timeout-header"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/mgmt.v1alpha1.DeleteAccountApiKeyRequest'
+              $ref: "#/components/schemas/mgmt.v1alpha1.DeleteAccountApiKeyRequest"
         required: true
       responses:
         default:
@@ -530,13 +530,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/connect.error'
+                $ref: "#/components/schemas/connect.error"
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mgmt.v1alpha1.DeleteAccountApiKeyResponse'
+                $ref: "#/components/schemas/mgmt.v1alpha1.DeleteAccountApiKeyResponse"
 tags:
   - name: mgmt.v1alpha1.ApiKeyService
     description: Service that manages the lifecycle of API Keys that are associated with a specific Account.

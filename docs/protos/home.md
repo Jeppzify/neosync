@@ -22,7 +22,7 @@ There are a few inputs that any SDK needs in order to be properly configured.
 
 ### API Url
 
-If using Neosync Cloud, the backend api url is: `https://neosync-api.svcs.neosync.dev`
+If using Neosync Cloud, the backend api url is: `https://github.com/Jeppzify/neosync`
 
 The standard localhost url is: `http://localhost:8080`
 

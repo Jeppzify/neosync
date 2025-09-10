@@ -85,11 +85,11 @@ func NewClient(encryptor sym_encrypt.Interface, opts ...Option) *Client {
 		opt(cfg)
 	}
 	return &Client{cfg: cfg, encryptor: encryptor}
-// SetStaticToken sets a static Slack token, bypassing OAuth
+}// SetStaticToken sets a static Slack token, bypassing OAuth
 func (c *Client) SetStaticToken(token string) {
 	c.staticToken = token
 }
-}
+
 
 func (c *Client) GetAuthorizeUrl(accountId, userId string) (string, error) {
 	state := &OauthState{

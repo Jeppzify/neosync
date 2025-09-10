@@ -31,6 +31,7 @@ type Interface interface {
 	) error
 	JoinChannel(ctx context.Context, accessToken, channelId string, logger *slog.Logger) error
 	GetPublicChannels(ctx context.Context, accessToken string) ([]slack.Channel, error)
+	SetStaticToken(token string)
 }
 
 type Client struct {

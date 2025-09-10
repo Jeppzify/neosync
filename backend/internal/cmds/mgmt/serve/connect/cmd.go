@@ -566,6 +566,10 @@ func serve(ctx context.Context) error {
 				ee_slack.WithScope(viper.GetString("SLACK_SCOPE")),
 				ee_slack.WithRedirectUrl(viper.GetString("SLACK_REDIRECT_URL")),
 			)
+			// Set static Slack token if present
+			if token := viper.GetString("SLACK_OAUTH_TOKEN"); token != "" {
+				slackClient.SetStaticToken(token)
+			}
 			accountHookOptions = append(
 				accountHookOptions,
 				accounthooks.WithSlackClient(slackClient),

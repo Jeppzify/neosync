@@ -34,8 +34,9 @@ type Interface interface {
 }
 
 type Client struct {
-	cfg       *config
-	encryptor sym_encrypt.Interface
+	cfg        *config
+	encryptor  sym_encrypt.Interface
+	staticToken string
 }
 
 type config struct {
@@ -84,6 +85,10 @@ func NewClient(encryptor sym_encrypt.Interface, opts ...Option) *Client {
 		opt(cfg)
 	}
 	return &Client{cfg: cfg, encryptor: encryptor}
+// SetStaticToken sets a static Slack token, bypassing OAuth
+func (c *Client) SetStaticToken(token string) {
+	c.staticToken = token
+}
 }
 
 func (c *Client) GetAuthorizeUrl(accountId, userId string) (string, error) {
@@ -174,7 +179,11 @@ func (c *Client) ExchangeCodeForAccessToken(
 }
 
 func (c *Client) Test(ctx context.Context, accessToken string) (*slack.AuthTestResponse, error) {
-	api := slack.New(accessToken)
+	token := accessToken
+	if c.staticToken != "" {
+		token = c.staticToken
+	}
+	api := slack.New(token)
 
 	resp, err := api.AuthTestContext(ctx)
 	if err != nil {
@@ -188,7 +197,11 @@ func (c *Client) SendMessage(
 	accessToken, channelId string,
 	options ...slack.MsgOption,
 ) error {
-	api := slack.New(accessToken)
+	token := accessToken
+	if c.staticToken != "" {
+		token = c.staticToken
+	}
+	api := slack.New(token)
 	_, _, err := api.PostMessageContext(ctx, channelId, options...)
 	if err != nil {
 		return fmt.Errorf("unable to send message: %w", err)
@@ -201,7 +214,11 @@ func (c *Client) JoinChannel(
 	accessToken, channelId string,
 	logger *slog.Logger,
 ) error {
-	api := slack.New(accessToken)
+	token := accessToken
+	if c.staticToken != "" {
+		token = c.staticToken
+	}
+	api := slack.New(token)
 
 	_, _, warnings, err := api.JoinConversationContext(ctx, channelId)
 	if err != nil {
@@ -217,7 +234,11 @@ func (c *Client) GetPublicChannels(
 	ctx context.Context,
 	accessToken string,
 ) ([]slack.Channel, error) {
-	api := slack.New(accessToken)
+	token := accessToken
+	if c.staticToken != "" {
+		token = c.staticToken
+	}
+	api := slack.New(token)
 
 	channels, _, err := api.GetConversationsContext(ctx, &slack.GetConversationsParameters{
 		Limit: 200,
